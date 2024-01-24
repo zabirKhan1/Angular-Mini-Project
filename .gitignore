@@ -1,1 +1,79 @@
-node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/documentation
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+/jspm_packages
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.alm
+.vscode
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+.tmp
+
+# System Files
+.DS_Store
+Thumbs.db
+
+src/app/**/*.js
+!src/app/utilities/dejoule-mode.js
+!src/app/app/graphing/plot/fullscreen.js
+src/app/**/*.map
+package-lock.json
+
+# Sonar Qube
+.scannerwork

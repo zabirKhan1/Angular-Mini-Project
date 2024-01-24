@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { ChartModule } from 'angular-highcharts';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     RouterOutlet,
     HeaderComponent,
     RouterModule,
-    HighchartsChartModule,
+    ChartModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
