@@ -1,0 +1,40 @@
+.custom-toolbar {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.options {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.img img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.options span {
+  margin: 0 10px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.options span:hover {
+  color: #29b6f6;
+}
