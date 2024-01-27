@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
 import { ChartModule } from 'angular-highcharts';
+import { HeaderComponent } from './Components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+// import { reducers, metaReducers, reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +16,8 @@ import { ChartModule } from 'angular-highcharts';
     RouterOutlet,
     HeaderComponent,
     RouterModule,
-    ChartModule
+    ChartModule,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
