@@ -4,9 +4,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { ChartModule } from 'angular-highcharts';
 import { HeaderComponent } from './Components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
-// import { reducers, metaReducers, reducers, metaReducers } from './reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './effects/user.effects';
 
 @Component({
   selector: 'app-root',
