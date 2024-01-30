@@ -1,14 +1,40 @@
-import { createReducer, on } from "@ngrx/store";
-import { UserActions } from "../actions/user.actions";
-
-export const userFeatureKey = "user";
+import { Action, createReducer, on } from "@ngrx/store";
+import {
+  loadUsers,
+  loadUsersSuccess,
+  loadUsersFailure,
+} from "../actions/user.actions";
+export interface Users {
+  firstname: string;
+  lastname: string;
+}
 
 export interface State {
-  
+  users: Users[];
+  err: string;
 }
 
 export const initialState: State = {
-  name:'zabirr'
+  users: [{ firstname: "zabir", lastname: "khan" }],
+  err: "",
 };
 
-export const reducer = createReducer(initialState);
+const userReducer = createReducer(
+  initialState,
+  on(loadUsers, (state) => ({
+    ...state,
+  })),
+  on(loadUsersSuccess, (state, action) => ({
+    ...state,
+    users: action.data,
+    err: "",
+  })),
+  on(loadUsersFailure, (state, action) => ({
+    ...state,
+    err: action.error,
+  }))
+);
+
+export function reducer(state: State | undefined, action: Action) {
+  return userReducer(state, action);
+}
