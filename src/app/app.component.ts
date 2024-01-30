@@ -4,9 +4,6 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { ChartModule } from 'angular-highcharts';
 import { HeaderComponent } from './Components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './effects/user.effects';
-
 @Component({
   selector: 'app-root',
   standalone: true,

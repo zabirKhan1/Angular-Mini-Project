@@ -3,8 +3,8 @@ import { Actions, ofType, createEffect } from "@ngrx/effects";
 import { HttpClient } from "@angular/common/http";
 import { switchMap, map, catchError } from "rxjs/operators";
 import { of } from "rxjs";
-import { UserService } from "../services/services.module";
-import { loadUsers, loadUsersFailure, loadUsersSuccess } from "../actions/user.actions";
+import { UserService } from "../../services/services.module";
+import { loadUsersList, loadUsersListFailure, loadUsersListSuccess } from "../actions/userList.action";
 @Injectable()
 export class UserEffects {
   constructor(
@@ -15,11 +15,11 @@ export class UserEffects {
 
   loadUsers$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(loadUsers),
+      ofType(loadUsersList),
       switchMap(() =>
         this.userService.getUsers().pipe(
-          map(users => loadUsersSuccess({ data: users })),
-          catchError(error => of(loadUsersFailure({ error })))
+          map(users => loadUsersListSuccess({ users: users })),
+          catchError(error => of(loadUsersListFailure({ error })))
         )
       )
     )
