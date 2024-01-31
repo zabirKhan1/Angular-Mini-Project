@@ -65,8 +65,8 @@ export class DashboardComponent {
       }
     },
     legend: {
-      layout: "vertical",
-      align: "right",
+      layout: "horizontal",
+      align: "center",
       verticalAlign: "top",
       x: -40,
       y: 80,
