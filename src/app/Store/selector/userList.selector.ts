@@ -1,10 +1,14 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { AppState } from "../app.state";
 import { userListState } from "../reducers/userList.reducer";
 
-export const SelectUserList = (state: AppState) => state.userList;
+const getUserListState = createFeatureSelector<any>("UserList");
 
-export const selectCartProducts = createSelector(
-  SelectUserList,
-  (state: userListState) => state.users
+export const gerUserList = createSelector(getUserListState, (state) => {
+  return state.users;
+});
+
+export const selectUserList = createSelector(
+  gerUserList,
+  (state: userListState) => state
 );

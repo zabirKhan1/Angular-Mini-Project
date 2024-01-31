@@ -1,16 +1,11 @@
-import { AsyncPipe } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
+import { AsyncPipe } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
-import { Observable, of } from "rxjs";
-import { ajax } from "rxjs/ajax";
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { loadUsersList } from "../../Store/actions/userList.action";
+import { AppState } from "../../Store/app.state";
+import { selectUserList } from "../../Store/selector/userList.selector";
 
 @Component({
   selector: "app-user-data",
@@ -20,10 +15,13 @@ export interface PeriodicElement {
   styleUrl: "./user-data.component.css",
 })
 export class UserDataComponent {
-  constructor(private http: HttpClient) {}
-  userData: any[] = [];
+  constructor(private store: Store<AppState>) {}
+  userList$!: Observable<any>;
+  users: any = [];
   displayedColumns: string[] = ["position", "name", "weight", "symbol"];
-  userList$ = ajax.getJSON(
-    "https://jsonplaceholder.org/users"
-  ) as Observable<any>;
+
+  ngOnInit() {
+    this.store.dispatch(loadUsersList());
+    this.userList$ = this.store.select(selectUserList);
+  }
 }
