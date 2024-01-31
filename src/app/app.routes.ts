@@ -1,15 +1,16 @@
-import { Routes } from '@angular/router';
-import { UserDataComponent } from './Components/user-data/user-data.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-
+import { Routes } from "@angular/router";
+import { DashboardComponent } from "./Components/dashboard/dashboard.component";
 
 export const routes: Routes = [
   {
-    path: 'user-data',
-    component: UserDataComponent,
+    path: "",
+    component: DashboardComponent,
   },
   {
-    path: '',
-    component: DashboardComponent,
+    path: "user-data",
+    loadComponent: () =>
+      import("./Components/user-data/user-data.component").then(
+        (e) => e.UserDataComponent
+      ),
   },
 ];

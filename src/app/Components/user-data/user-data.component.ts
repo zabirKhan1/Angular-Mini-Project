@@ -6,11 +6,14 @@ import { Observable } from "rxjs";
 import { loadUsersList } from "../../Store/actions/userList.action";
 import { AppState } from "../../Store/app.state";
 import { selectUserList } from "../../Store/selector/userList.selector";
+import { MatToolbar } from "@angular/material/toolbar";
+import { MatIcon } from "@angular/material/icon";
+import { MatFormField } from "@angular/material/form-field";
 
 @Component({
   selector: "app-user-data",
   standalone: true,
-  imports: [MatTableModule, AsyncPipe],
+  imports: [MatTableModule, AsyncPipe, MatToolbar, MatIcon,MatFormField,],
   templateUrl: "./user-data.component.html",
   styleUrl: "./user-data.component.css",
 })
