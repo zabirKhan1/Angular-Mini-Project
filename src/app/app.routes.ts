@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { DashboardComponent } from "./Components/dashboard/dashboard.component";
+import { AddUserComponent } from "./Components/add-user/add-user.component";
 
 export const routes: Routes = [
   {
@@ -12,5 +13,9 @@ export const routes: Routes = [
       import("./Components/user-data/user-data.component").then(
         (e) => e.UserDataComponent
       ),
+  },
+  {
+    path: "add-user",
+    component: AddUserComponent,
   },
 ];

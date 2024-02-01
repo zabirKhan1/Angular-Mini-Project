@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { UserType } from "../Components/Models/userModels";
 
 @Injectable({
@@ -9,6 +9,7 @@ import { UserType } from "../Components/Models/userModels";
 export class UserService {
   constructor(private http: HttpClient) {}
 
+  Analytics = new BehaviorSubject<String>('');
   getUsers(): Observable<any[]> {
     return this.http.get<UserType[]>("https://jsonplaceholder.org/users");
   }

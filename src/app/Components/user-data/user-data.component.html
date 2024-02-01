@@ -29,5 +29,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-  <button class="custom-button">Add Users</button>
+  <button class="custom-button" (click)="AddUser()">Add Users</button>
 </div>

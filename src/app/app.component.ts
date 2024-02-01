@@ -1,23 +1,26 @@
-import { Component, isDevMode } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { ChartModule } from 'angular-highcharts';
-import { HeaderComponent } from './Components/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { Component, isDevMode } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterLink, RouterModule, RouterOutlet } from "@angular/router";
+import { ChartModule } from "angular-highcharts";
+import { HeaderComponent } from "./Components/header/header.component";
+import { HttpClientModule } from "@angular/common/http";
+import { MaterialModuleModule } from "./Module/material-module/material-module.module";
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [
     CommonModule,
     RouterOutlet,
     HeaderComponent,
     RouterModule,
+    RouterLink,
     ChartModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModuleModule,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = 'Project';
+  title = "Project";
 }
