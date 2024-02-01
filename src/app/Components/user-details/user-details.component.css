@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; 
+}
+
+.card {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 0 auto; 
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: black; 
+  color: white; 
+}
+
+.detail-row {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.mat-card-actions {
+  justify-content: flex-end; 
+}
