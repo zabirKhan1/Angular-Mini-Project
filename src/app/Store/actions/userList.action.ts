@@ -36,3 +36,12 @@ export const addUser = createAction(
 export const addUserSuccesSuccess = createAction(
   UserListActionTypes.AddUserSuccess
 );
+
+export const deleteUser = createAction(
+  UserListActionTypes.DeleteUser,
+  props<{ users: UserType }>()
+);
+
+export const deleteUserSucces = createAction(
+  UserListActionTypes.DeleteUserSuccess
+);

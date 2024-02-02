@@ -7,6 +7,8 @@ import { UserService } from "../../services/services.module";
 import {
   addUser,
   addUserSuccesSuccess,
+  deleteUser,
+  deleteUserSucces,
   loadUsersList,
   loadUsersListFailure,
   loadUsersListSuccess,
@@ -21,7 +23,7 @@ export class UserListEffects {
     private http: HttpClient,
     private userService: UserService,
     private matSnack: MatSnackBar
-  ) { }
+  ) {}
 
   loadUsers$ = createEffect(() =>
     this.actions$.pipe(
@@ -48,6 +50,26 @@ export class UserListEffects {
           }),
           catchError((_err) =>
             of(showAlerts({ message: "Failed to add", res: "fail" }))
+          )
+        );
+      })
+    )
+  );
+
+  deleteUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteUser),
+      switchMap((action) => {
+        console.log('deleeyye-----',action)
+        return this.userService.deleteUserById( Object.values(action).slice(0, 4).join('') as any).pipe(
+          switchMap(() => {
+            return of(
+              deleteUserSucces(),
+              showAlerts({ message: "Deleted User successfully", res: "pass" })
+            );
+          }),
+          catchError((_err) =>
+            of(showAlerts({ message: "Failed to Delete", res: "fail" }))
           )
         );
       })

@@ -30,7 +30,7 @@ export class UserService {
     );
   }
 
-  deleteUserById(Id: number): Observable<any[]> {
+  deleteUserById(Id:any): Observable<any[]> {
     return this.http.delete<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
   }
 }
