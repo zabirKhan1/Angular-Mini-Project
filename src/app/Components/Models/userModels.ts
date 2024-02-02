@@ -66,3 +66,13 @@ export enum Phone {
   The5555556789 = "(555) 555-6789",
   The5555559012 = "(555) 555-9012",
 }
+
+export interface UsersTypes {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  dob: string;
+  address: string;
+}

@@ -13,7 +13,7 @@ export const routes: Routes = [
     component: AddUserComponent,
   },
   {
-    path: "view-user-details",
+    path: "view-user-details/:id",
     component: UserDetailsComponent,
   },
   {

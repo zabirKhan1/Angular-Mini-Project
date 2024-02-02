@@ -21,10 +21,11 @@ export class UserDataComponent {
   userList$!: Observable<any>;
   users: any = [];
   displayedColumns: string[] = [
-    "position",
-    "name",
-    "weight",
-    "symbol",
+    "firstname",
+    "email",
+    "address",
+    "dob",
+    "company",
     "view",
     "edit",
     "delete",
@@ -39,14 +40,11 @@ export class UserDataComponent {
     this.route.navigate(["add-user"]);
   }
 
-  viewUser(): void {
-    this.route.navigate(["view-user-details"]);
+  viewUser(id: string): void {
+    this.route.navigate([`view-user-details/${id}`]);
   }
 
   editUser(): void {}
 
-
-  deleteUser(): void {
-
-  }
+  deleteUser(): void {}
 }

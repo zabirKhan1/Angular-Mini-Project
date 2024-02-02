@@ -1,16 +1,36 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { UserType } from "../Components/Models/userModels";
+import { UserType, UsersTypes } from "../Components/Models/userModels";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  Analytics = new BehaviorSubject<String>('');
-  getUsers(): Observable<any[]> {
-    return this.http.get<UserType[]>("https://jsonplaceholder.org/users");
+  Analytics = new BehaviorSubject<String>("");
+
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<UsersTypes[]>("http://localhost:3000/users");
+  }
+
+  AddUser(user: UserType): Observable<any[]> {
+    return this.http.post<UsersTypes[]>("http://localhost:3000/users", user);
+  }
+
+  getUserById(Id: number): Observable<any[]> {
+    return this.http.get<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
+  }
+
+  updateUserById(user: UsersTypes, Id: number): Observable<any[]> {
+    return this.http.put<UsersTypes[]>(
+      `http://localhost:3000/users/${Id}`,
+      user
+    );
+  }
+
+  deleteUserById(Id: number): Observable<any[]> {
+    return this.http.delete<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
   }
 }

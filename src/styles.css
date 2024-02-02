@@ -11,3 +11,10 @@ body {
   padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.text-green {
+  color: green;
+}
+.text-red {
+  color: red;
+}

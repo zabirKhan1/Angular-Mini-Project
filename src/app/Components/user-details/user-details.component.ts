@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MaterialModuleModule } from '../../Module/material-module/material-module.module';
+import { Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
+import { UserService } from "../../services/services.module";
+import { AsyncPipe } from "@angular/common";
 
 @Component({
-  selector: 'app-user-details',
+  selector: "app-user-details",
   standalone: true,
-  imports: [MaterialModuleModule],
-  templateUrl: './user-details.component.html',
-  styleUrl: './user-details.component.css'
+  imports: [MaterialModuleModule, AsyncPipe],
+  templateUrl: "./user-details.component.html",
+  styleUrl: "./user-details.component.css",
 })
 export class UserDetailsComponent {
   user: any;
@@ -15,23 +17,16 @@ export class UserDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-  ) { }
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    // Hardcoded user object
-    this.user = {
-      id: 1,
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      dob: '1990-01-01',
-      address: '123 Main St, Anytown, USA',
-      company: 'Acme Corporation'
-    };
+    this.userService
+      .getUserById(Number(this.route.snapshot.paramMap.get("id")))
+      .subscribe((data) => (this.user = data));
   }
 
   goBack(): void {
-    this.router.navigate(['/user-data']);
+    this.router.navigate(["/user-data"]);
   }
-
 }

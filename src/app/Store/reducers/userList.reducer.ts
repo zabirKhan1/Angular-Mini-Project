@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { UserType } from "../../Components/Models/userModels";
+import { UsersTypes } from "../../Components/Models/userModels";
 import {
   loadUsersList,
   loadUsersListFailure,
@@ -7,7 +7,7 @@ import {
 } from "../actions/userList.action";
 
 export interface userListState {
-  users: UserType[];
+  users: UsersTypes[];
   err: string;
 }
 

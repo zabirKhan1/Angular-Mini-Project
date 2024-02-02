@@ -1,30 +1,35 @@
 <div class="user-list-container">
   <h2>All User List</h2>
   <table mat-table [dataSource]="userList$ | async" class="mat-elevation-z8">
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="firstname">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let element">{{ element.firstname }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
       <th mat-header-cell *matHeaderCellDef>Address</th>
-      <td mat-cell *matCellDef="let element">{{ element.address.street }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.address }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="weight">
+    <ng-container matColumnDef="dob">
       <th mat-header-cell *matHeaderCellDef>Date Of Birth</th>
-      <td mat-cell *matCellDef="let element">{{ element.birthDate }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.dob }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="symbol">
+    <ng-container matColumnDef="company">
       <th mat-header-cell *matHeaderCellDef>Company</th>
-      <td mat-cell *matCellDef="let element">{{ element.company.name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.company }}</td>
     </ng-container>
 
     <ng-container matColumnDef="view">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button (click)="viewUser()">
+        <button mat-icon-button (click)="viewUser(element.id)">
           <mat-icon>visibility</mat-icon>
         </button>
       </td>
