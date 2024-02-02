@@ -8,11 +8,12 @@ import { AppState } from "../../Store/app.state";
 import { selectUserList } from "../../Store/selector/userList.selector";
 import { Route, Router, RouterLink } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
+import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
 
 @Component({
   selector: "app-user-data",
   standalone: true,
-  imports: [MaterialModuleModule, AsyncPipe, RouterLink],
+  imports: [MaterialModuleModule, AsyncPipe, RouterLink, DateConvertorPipe],
   templateUrl: "./user-data.component.html",
   styleUrl: "./user-data.component.css",
 })

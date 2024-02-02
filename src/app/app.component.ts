@@ -5,6 +5,7 @@ import { ChartModule } from "angular-highcharts";
 import { HeaderComponent } from "./Components/header/header.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MaterialModuleModule } from "./Module/material-module/material-module.module";
+import { DateConvertorPipe } from "./CustomPipe/date-convertor.pipe";
 @Component({
   selector: "app-root",
   standalone: true,
@@ -17,6 +18,7 @@ import { MaterialModuleModule } from "./Module/material-module/material-module.m
     ChartModule,
     HttpClientModule,
     MaterialModuleModule,
+    DateConvertorPipe
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
