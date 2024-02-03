@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { UserType, UsersTypes } from "../../Components/Models/userModels";
+import { UsersTypes } from "../../Components/Models/userModels";
 
 export enum UserListActionTypes {
   LoadUsersList = "[User] Load UsersList",
@@ -14,6 +14,10 @@ export enum UserListActionTypes {
 
   UpdateUser = "[User] Update User",
   UpdateUserSuccess = "[User] Update User Success",
+
+  LoadUserById = "[User] Get User By Id",
+  LoadUserByIdSuccess = "[User] Get User By Id Success",
+  LoadUsersByIdFailed = "[User] Get User By Id Failed",
 }
 
 export const loadUsersList = createAction(UserListActionTypes.LoadUsersList);
@@ -30,7 +34,7 @@ export const loadUsersListFailure = createAction(
 
 export const addUser = createAction(
   UserListActionTypes.AddUser,
-  props<{ users: UserType }>()
+  props<{ users: UsersTypes }>()
 );
 
 export const addUserSuccesSuccess = createAction(
@@ -39,9 +43,24 @@ export const addUserSuccesSuccess = createAction(
 
 export const deleteUser = createAction(
   UserListActionTypes.DeleteUser,
-  props<{ users: UserType }>()
+  props<{ users: UsersTypes }>()
 );
 
 export const deleteUserSucces = createAction(
   UserListActionTypes.DeleteUserSuccess
+);
+
+export const loadUsersDataById = createAction(
+  UserListActionTypes.LoadUserById,
+  props<{ code: number }>()
+);
+
+export const loadUsersDataByIdSuccess = createAction(
+  UserListActionTypes.LoadUserByIdSuccess,
+  props<{ users: UsersTypes }>()
+);
+
+export const loadUsersDataByIdFailure = createAction(
+  UserListActionTypes.LoadUsersByIdFailed,
+  props<{ error: string }>()
 );

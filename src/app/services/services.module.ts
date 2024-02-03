@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { UserType, UsersTypes } from "../Components/Models/userModels";
+import {  UsersTypes } from "../Components/Models/userModels";
 
 @Injectable({
   providedIn: "root",
@@ -15,12 +15,12 @@ export class UserService {
     return this.http.get<UsersTypes[]>("http://localhost:3000/users");
   }
 
-  AddUser(user: UserType): Observable<any[]> {
+  AddUser(user: UsersTypes): Observable<any[]> {
     return this.http.post<UsersTypes[]>("http://localhost:3000/users", user);
   }
 
-  getUserById(Id: number): Observable<any[]> {
-    return this.http.get<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
+  getUserById(Id: number): Observable<any> {
+    return this.http.get<UsersTypes>(`http://localhost:3000/users/${Id}`);
   }
 
   updateUserById(user: UsersTypes, Id: number): Observable<any[]> {

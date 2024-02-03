@@ -1,6 +1,9 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { UsersTypes } from "../../Components/Models/userModels";
 import {
+  loadUsersDataById,
+  loadUsersDataByIdFailure,
+  loadUsersDataByIdSuccess,
   loadUsersList,
   loadUsersListFailure,
   loadUsersListSuccess,
@@ -28,6 +31,33 @@ export const userListReducer = createReducer(
     };
   }),
   on(loadUsersListFailure, (state, action) => ({
+    ...state,
+    err: action.error,
+  }))
+);
+
+export const initialStateUser: UsersTypes = {
+  firstname: "",
+  lastname: "",
+  dob: "",
+  company: "",
+  email: "",
+  address: "",
+  id: "",
+};
+
+export const userByIdReducer = createReducer(
+  initialStateUser,
+  on(loadUsersDataById, (state) => ({
+    ...state,
+  })),
+  on(loadUsersDataByIdSuccess, (state, action) => {
+    return {
+      ...state,
+      users: action.users,
+    };
+  }),
+  on(loadUsersDataByIdFailure, (state, action) => ({
     ...state,
     err: action.error,
   }))

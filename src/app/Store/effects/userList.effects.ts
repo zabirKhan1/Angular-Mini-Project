@@ -9,13 +9,16 @@ import {
   addUserSuccesSuccess,
   deleteUser,
   deleteUserSucces,
+  loadUsersDataById,
+  loadUsersDataByIdFailure,
+  loadUsersDataByIdSuccess,
   loadUsersList,
   loadUsersListFailure,
   loadUsersListSuccess,
 } from "../actions/userList.action";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { showAlerts } from "../actions/alert.action";
-import { UserType } from "../../Components/Models/userModels";
+import { UsersTypes } from "../../Components/Models/userModels";
 @Injectable()
 export class UserListEffects {
   constructor(
@@ -34,6 +37,18 @@ export class UserListEffects {
           catchError((error) => of(loadUsersListFailure({ error })))
         )
       )
+    )
+  );
+
+  loadUsersById$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadUsersDataById),
+      switchMap((action) => {
+        return this.userService.getUserById(action.code).pipe(
+          map((users) => loadUsersDataByIdSuccess({ users: users })),
+          catchError((error) => of(loadUsersDataByIdFailure({ error })))
+        );
+      })
     )
   );
 
@@ -60,18 +75,22 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(deleteUser),
       switchMap((action) => {
-        console.log('deleeyye-----',action)
-        return this.userService.deleteUserById( Object.values(action).slice(0, 4).join('') as any).pipe(
-          switchMap(() => {
-            return of(
-              deleteUserSucces(),
-              showAlerts({ message: "Deleted User successfully", res: "pass" })
-            );
-          }),
-          catchError((_err) =>
-            of(showAlerts({ message: "Failed to Delete", res: "fail" }))
-          )
-        );
+        return this.userService
+          .deleteUserById(Object.values(action).slice(0, 4).join("") as any)
+          .pipe(
+            switchMap(() => {
+              return of(
+                deleteUserSucces(),
+                showAlerts({
+                  message: "Deleted User successfully",
+                  res: "pass",
+                })
+              );
+            }),
+            catchError((_err) =>
+              of(showAlerts({ message: "Failed to Delete", res: "fail" }))
+            )
+          );
       })
     )
   );

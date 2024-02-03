@@ -3,6 +3,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
 import { UserService } from "../../services/services.module";
 import { AsyncPipe } from "@angular/common";
+import { Store } from "@ngrx/store";
+import { loadUsersDataById } from "../../Store/actions/userList.action";
+import { Observable } from "rxjs";
+import { selectUserById } from "../../Store/selector/userList.selector";
+import { UsersTypes } from "../Models/userModels";
 
 @Component({
   selector: "app-user-details",
@@ -12,18 +17,22 @@ import { AsyncPipe } from "@angular/common";
   styleUrl: "./user-details.component.css",
 })
 export class UserDetailsComponent {
-  user: any;
+  user: UsersTypes | undefined;
+  userById$!: Observable<UsersTypes>;
+  userId: any;
 
   constructor(
+    private store: Store,
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService
   ) {}
 
   ngOnInit(): void {
-    this.userService
-      .getUserById(Number(this.route.snapshot.paramMap.get("id")))
-      .subscribe((data) => (this.user = data));
+    this.userId = this.route.snapshot.paramMap.get("id");
+    this.store.dispatch(loadUsersDataById({ code: this.userId }));
+    this.userById$ = this.store.select(selectUserById);
+    this.userById$.subscribe((user) => (this.user = user));
   }
 
   goBack(): void {
