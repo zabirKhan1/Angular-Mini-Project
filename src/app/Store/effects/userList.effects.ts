@@ -6,7 +6,7 @@ import { of } from "rxjs";
 import { UserService } from "../../services/services.module";
 import {
   addUser,
-  addUserSuccesSuccess,
+  addUserSucces,
   deleteUser,
   deleteUserSucces,
   loadUsersDataById,
@@ -15,10 +15,12 @@ import {
   loadUsersList,
   loadUsersListFailure,
   loadUsersListSuccess,
+  updateUser,
+  updateUserSuccess,
 } from "../actions/userList.action";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { showAlerts } from "../actions/alert.action";
-import { UsersTypes } from "../../Components/Models/userModels";
+
 @Injectable()
 export class UserListEffects {
   constructor(
@@ -59,12 +61,31 @@ export class UserListEffects {
         return this.userService.AddUser(action as any).pipe(
           switchMap(() => {
             return of(
-              addUserSuccesSuccess(),
+              addUserSucces(),
               showAlerts({ message: "Added successfully", res: "pass" })
             );
           }),
           catchError((_err) =>
             of(showAlerts({ message: "Failed to add", res: "fail" }))
+          )
+        );
+      })
+    )
+  );
+
+  updateUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateUser),
+      switchMap((action) => {
+        return this.userService.updateUserById(action.user, action.id).pipe(
+          switchMap(() => {
+            return of(
+              updateUserSuccess(),
+              showAlerts({ message: "Updated successfully", res: "pass" })
+            );
+          }),
+          catchError((_err) =>
+            of(showAlerts({ message: "Failed to Update", res: "fail" }))
           )
         );
       })

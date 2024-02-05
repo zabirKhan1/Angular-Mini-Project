@@ -37,8 +37,15 @@ export const addUser = createAction(
   props<{ users: UsersTypes }>()
 );
 
-export const addUserSuccesSuccess = createAction(
-  UserListActionTypes.AddUserSuccess
+export const addUserSucces = createAction(UserListActionTypes.AddUserSuccess);
+
+export const updateUser = createAction(
+  UserListActionTypes.UpdateUser,
+  props<{ user: UsersTypes; id: string | number | null | undefined }>()
+);
+
+export const updateUserSuccess = createAction(
+  UserListActionTypes.UpdateUserSuccess
 );
 
 export const deleteUser = createAction(
@@ -52,7 +59,7 @@ export const deleteUserSucces = createAction(
 
 export const loadUsersDataById = createAction(
   UserListActionTypes.LoadUserById,
-  props<{ code: number }>()
+  props<{ code: string | number | null | undefined }>()
 );
 
 export const loadUsersDataByIdSuccess = createAction(

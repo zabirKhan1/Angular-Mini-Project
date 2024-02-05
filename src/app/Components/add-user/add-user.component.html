@@ -1,7 +1,9 @@
 <div class="container">
   <mat-card class="card">
     <mat-card-header>
-      <mat-card-title class="title">Add User</mat-card-title>
+      <mat-card-title class="title"
+        >{{ userId ? "Edit" : "Add" }} User</mat-card-title
+      >
     </mat-card-header>
 
     <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -75,7 +77,7 @@
           color="black"
           [disabled]="userForm.invalid"
         >
-          Add User
+          {{ userId ? "Save" : "Add" }} User
         </button>
       </mat-card-actions>
     </form>

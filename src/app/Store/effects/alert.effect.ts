@@ -8,7 +8,6 @@ export class alertEffect {
   constructor(private matSnack: MatSnackBar, private actions$: Actions) {}
 
   snackBarEffect = (message: string, res: string = "fail") => {
-    console.log("from alerts", message, res);
     let _class = res === "pass" ? "text-green" : "text-red";
     return this.matSnack.open(message, "OK", {
       verticalPosition: "top",
@@ -19,7 +18,6 @@ export class alertEffect {
   };
 
   alertEffect$ = createEffect(() => {
-    console.log("runnnnnnn");
     return this.actions$.pipe(
       ofType(showAlerts),
       exhaustMap((action) => {

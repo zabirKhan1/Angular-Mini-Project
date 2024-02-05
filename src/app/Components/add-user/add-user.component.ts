@@ -8,8 +8,13 @@ import {
 } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { Store } from "@ngrx/store";
-import { addUser } from "../../Store/actions/userList.action";
-import { Router } from "@angular/router";
+import {
+  addUser,
+  loadUsersDataById,
+  updateUser,
+} from "../../Store/actions/userList.action";
+import { ActivatedRoute, Router } from "@angular/router";
+import { selectUserById } from "../../Store/selector/userList.selector";
 
 @Component({
   selector: "app-add-user",
@@ -20,11 +25,13 @@ import { Router } from "@angular/router";
 })
 export class AddUserComponent {
   userForm: FormGroup;
+  userId: string | undefined | null;
 
   constructor(
     private fb: FormBuilder,
     private store: Store,
-    private route: Router
+    private route: Router,
+    private activeRoute: ActivatedRoute
   ) {
     this.userForm = this.fb.group({
       firstname: ["", Validators.required],
@@ -36,12 +43,32 @@ export class AddUserComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userId = this.activeRoute.snapshot.paramMap.get("id");
+    if (this.userId) {
+      this.store.dispatch(loadUsersDataById({ code: this.userId }));
+      this.userForm.controls["email"].disable()
+      this.store.select(selectUserById).subscribe((user) => {
+        this.userForm.setValue({
+          firstname: user.firstname,
+          lastname: user.lastname,
+          email: user.email,
+          company: user.company,
+          address: user.address,
+          dob: user.dob,
+        });
+      });
+    }
+  }
 
   submitForm() {
     if (this.userForm.valid) {
-      this.store.dispatch(addUser(this.userForm.value));
-      this.route.navigate(["user-data"]);
+      if (this.userId)
+        this.store.dispatch(
+          updateUser({ user: this.userForm.value, id: this.userId })
+        );
+      else this.store.dispatch(addUser(this.userForm.value));
     }
+    this.route.navigate(["user-data"]);
   }
 }
