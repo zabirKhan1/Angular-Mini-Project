@@ -22,8 +22,8 @@ export class DashboardComponent {
     },
     series: [
       {
-        name: 'Line 1' ,
-        data: [1, 2, 9] 
+        name: 'Line 1',
+        data: [1, 2, 9]
       } as any
     ]
   });
@@ -83,56 +83,57 @@ export class DashboardComponent {
       {
         name: 'Population',
         data: [
-            ['Shanghai', 24.2],
-            ['Beijing', 20.8],
-            ['Karachi', 14.9],
-            ['Shenzhen', 13.7],
-            ['Guangzhou', 13.1],
-            ['Istanbul', 12.7],
-            ['Mumbai', 12.4],
-            ['Moscow', 12.2],
-            ['São Paulo', 12.0],
-            ['Delhi', 11.7],
-            ['Kinshasa', 11.5],
-            ['Tianjin', 11.2],
-            ['Lahore', 11.1],
-            ['Jakarta', 10.6],
-            ['Dongguan', 10.6],
-            ['Lagos', 10.6],
-            ['Bengaluru', 10.3],
-            ['Seoul', 9.8],
-            ['Foshan', 9.3],
-            ['Tokyo', 9.3]
-        ],} as any
+          ['Shanghai', 24.2],
+          ['Beijing', 20.8],
+          ['Karachi', 14.9],
+          ['Shenzhen', 13.7],
+          ['Guangzhou', 13.1],
+          ['Istanbul', 12.7],
+          ['Mumbai', 12.4],
+          ['Moscow', 12.2],
+          ['São Paulo', 12.0],
+          ['Delhi', 11.7],
+          ['Kinshasa', 11.5],
+          ['Tianjin', 11.2],
+          ['Lahore', 11.1],
+          ['Jakarta', 10.6],
+          ['Dongguan', 10.6],
+          ['Lagos', 10.6],
+          ['Bengaluru', 10.3],
+          ['Seoul', 9.8],
+          ['Foshan', 9.3],
+          ['Tokyo', 9.3]
+        ],
+      } as any
     ]
   });
-  pieChat=new Chart({
+  pieChat = new Chart({
     chart: {
       type: 'pie',
       // backgroundColor: '#BBBBBB',
-      
+
     },
     title: {
-        text: undefined
+      text: undefined
     },
     legend: {
-        floating: true,
-        align: 'left',
-        layout: 'vertical',
-        verticalAlign: 'top',
-        width: 300,
-        x: 200,
-        y: 0
+      floating: true,
+      align: 'left',
+      layout: 'vertical',
+      verticalAlign: 'top',
+      width: 300,
+      x: 200,
+      y: 0
     },
     plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: false
-            },
-            showInLegend: true
-        }
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: false
+        },
+        showInLegend: true
+      }
     },
     series: [
       {

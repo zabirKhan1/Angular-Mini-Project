@@ -13,6 +13,10 @@ export const routes: Routes = [
     component: AddUserComponent,
   },
   {
+    path: "edit-user/:id",
+    component: AddUserComponent,
+  },
+  {
     path: "view-user-details/:id",
     component: UserDetailsComponent,
   },
@@ -23,5 +27,4 @@ export const routes: Routes = [
         (e) => e.UserDataComponent
       ),
   },
-
 ];

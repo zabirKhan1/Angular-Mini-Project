@@ -118,6 +118,16 @@
       "address": "Noida",
       "dob": "2024-02-06T18:30:00.000Z",
       "type": "[User] Add User"
+    },
+    {
+      "id": "69a5",
+      "firstname": "Abhilash",
+      "lastname": "Srivastava",
+      "email": "Abhialash.srivastava@SmartJoules.com",
+      "company": "Smart Joules Pvt Ltd",
+      "address": "Noida Sector 52 ",
+      "dob": "1974-03-20T18:30:00.000Z",
+      "type": "[User] Add User"
     }
   ]
 }

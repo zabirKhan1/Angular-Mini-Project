@@ -1,10 +1,8 @@
 import { Component } from "@angular/core";
 import { AsyncPipe } from "@angular/common";
-import { MatTableModule } from "@angular/material/table";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { deleteUser, loadUsersList } from "../../Store/actions/userList.action";
-import { AppState } from "../../Store/app.state";
 import { selectUserList } from "../../Store/selector/userList.selector";
 import { Route, Router, RouterLink } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
@@ -45,7 +43,9 @@ export class UserDataComponent {
     this.route.navigate([`view-user-details/${id}`]);
   }
 
-  editUser(): void {}
+  editUser(id: string): void {
+    this.route.navigate([`edit-user/${id}`]);
+  }
 
   deleteUser(Id: any): void {
     this.store.dispatch(deleteUser(Id.toString()));
