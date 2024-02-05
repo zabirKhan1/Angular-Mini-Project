@@ -3,7 +3,7 @@ import { Actions, ofType, createEffect } from "@ngrx/effects";
 import { HttpClient } from "@angular/common/http";
 import { switchMap, map, catchError } from "rxjs/operators";
 import { of } from "rxjs";
-import { CommonServices } from "../../services/user.module";
+import { CommonServices } from "../../services/services.module";
 import {
   addUser,
   addUserSucces,

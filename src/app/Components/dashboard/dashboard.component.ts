@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Chart, ChartModule } from "angular-highcharts";
 import * as Highcharts from "highcharts";
@@ -13,6 +13,7 @@ import { selectDashBoardData } from "../../Store/selector/dashboard.selector";
   styleUrl: "./dashboard.component.css",
 })
 export class DashboardComponent {
+
   constructor(private store: Store) {}
 
   ngOnInit() {
@@ -21,14 +22,6 @@ export class DashboardComponent {
   }
 
 
-
-
-
-
-
-
-
-  
   charts = new Chart({
     chart: {
       type: "line",

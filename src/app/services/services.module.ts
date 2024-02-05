@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {  Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { UsersTypes } from "../Components/Models/userModels";
 
 @Injectable({
@@ -8,6 +8,9 @@ import { UsersTypes } from "../Components/Models/userModels";
 })
 export class CommonServices {
   constructor(private http: HttpClient) {}
+
+  Analytics = new BehaviorSubject<String>("");
+
   getAllUsers(): Observable<any[]> {
     return this.http.get<UsersTypes[]>("http://localhost:3000/users");
   }
@@ -34,5 +37,7 @@ export class CommonServices {
     return this.http.delete<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
   }
 
-
+  getDashboardData(): Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:3000/dashboard");
+  }
 }
