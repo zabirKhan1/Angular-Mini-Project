@@ -3,7 +3,7 @@ import { Actions, ofType, createEffect } from "@ngrx/effects";
 import { HttpClient } from "@angular/common/http";
 import { switchMap, map, catchError } from "rxjs/operators";
 import { of } from "rxjs";
-import { UserService } from "../../services/services.module";
+import { CommonServices } from "../../services/services.module";
 import {
   addUser,
   addUserSucces,
@@ -26,7 +26,7 @@ export class UserListEffects {
   constructor(
     private actions$: Actions,
     private http: HttpClient,
-    private userService: UserService,
+    private CommonServices: CommonServices,
     private matSnack: MatSnackBar
   ) {}
 
@@ -34,7 +34,7 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(loadUsersList),
       switchMap(() =>
-        this.userService.getAllUsers().pipe(
+        this.CommonServices.getAllUsers().pipe(
           map((users) => loadUsersListSuccess({ users: users })),
           catchError((error) => of(loadUsersListFailure({ error })))
         )
@@ -46,7 +46,7 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(loadUsersDataById),
       switchMap((action) => {
-        return this.userService.getUserById(action.code).pipe(
+        return this.CommonServices.getUserById(action.code).pipe(
           map((users) => loadUsersDataByIdSuccess({ users: users })),
           catchError((error) => of(loadUsersDataByIdFailure({ error })))
         );
@@ -58,7 +58,7 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(addUser),
       switchMap((action) => {
-        return this.userService.AddUser(action as any).pipe(
+        return this.CommonServices.AddUser(action as any).pipe(
           switchMap(() => {
             return of(
               addUserSucces(),
@@ -77,7 +77,7 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(updateUser),
       switchMap((action) => {
-        return this.userService.updateUserById(action.user, action.id).pipe(
+        return this.CommonServices.updateUserById(action.user, action.id).pipe(
           switchMap(() => {
             return of(
               updateUserSuccess(),
@@ -96,7 +96,7 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(deleteUser),
       switchMap((action) => {
-        return this.userService
+        return this.CommonServices
           .deleteUserById(Object.values(action).slice(0, 4).join("") as any)
           .pipe(
             switchMap(() => {

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
-import { UserService } from "../../services/services.module";
+import { CommonServices } from "../../services/services.module";
 import { AsyncPipe } from "@angular/common";
 import { Store } from "@ngrx/store";
 import { loadUsersDataById } from "../../Store/actions/userList.action";
@@ -25,7 +25,7 @@ export class UserDetailsComponent {
     private store: Store,
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
+    private CommonServices: CommonServices
   ) {}
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { AppState } from "../app.state";
 import { userListState } from "../reducers/userList.reducer";
 import { UsersTypes } from "../../Components/Models/userModels";
 

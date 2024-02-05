@@ -6,7 +6,7 @@ import { UsersTypes } from "../Components/Models/userModels";
 @Injectable({
   providedIn: "root",
 })
-export class UserService {
+export class CommonServices {
   constructor(private http: HttpClient) {}
 
   Analytics = new BehaviorSubject<String>("");

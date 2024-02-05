@@ -13,7 +13,7 @@ export const loadDashboardDataSuccess = createAction(
   props<{ dash: any[] }>()
 );
 
-export const loadUsersListFailure = createAction(
+export const loadDashboardDataFailure = createAction(
   DashboardTypes.LoadDashboardDataFailure,
   props<{ error: string }>()
 );
