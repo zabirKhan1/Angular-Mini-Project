@@ -139,5 +139,61 @@
       "id": "8e19"
     }
   ],
-  "dashboard": []
+  "dashboard": [
+    {
+      "chartType": "pie",
+      "title": "Users by Company",
+      "data": [
+        { "name": "ABC Corp", "value": 1 },
+        { "name": "XYZ Inc", "value": 1 },
+        { "name": "123 Company", "value": 1 },
+        { "name": "Brown Enterprises", "value": 1 },
+        { "name": "Davis Corporation", "value": 1 },
+        { "name": "Wilson & Sons", "value": 1 },
+        { "name": "Garcia Group", "value": 1 },
+        { "name": "Martinez Ltd.", "value": 1 },
+        { "name": "Clark Enterprises", "value": 1 },
+        { "name": "Lopez & Co.", "value": 2 },
+        { "name": "Smart Joules", "value": 1 },
+        { "name": "Smart Joules Pvt Ltd", "value": 2 }
+      ]
+    },
+    {
+      "chartType": "bar",
+      "title": "Users by Age Group",
+      "xAxis": ["18-25", "26-35", "36-45", "46-55", "56+"],
+      "data": [1, 5, 3, 2, 2]
+    },
+    {
+      "chartType": "bar",
+      "title": "Users by Location",
+      "xAxis": [
+        "Anytown, USA",
+        "Anycity, USA",
+        "Anystate, USA",
+        "Noida",
+        "Jhansi"
+      ],
+      "data": [3, 3, 2, 2, 1]
+    },
+    {
+      "chartType": "line",
+      "title": "Users by Registration Year",
+      "xAxis": [
+        "1974",
+        "1975",
+        "1977",
+        "1978",
+        "1980",
+        "1982",
+        "1984",
+        "1985",
+        "1989",
+        "1990",
+        "1993",
+        "2024"
+      ],
+      "data": [1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+    }
+  ]
 }
