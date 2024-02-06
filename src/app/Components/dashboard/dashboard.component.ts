@@ -4,6 +4,7 @@ import { Chart, ChartModule } from "angular-highcharts";
 import * as Highcharts from "highcharts";
 import { loadDashboardData } from "../../Store/actions/dashboard.action";
 import { selectDashBoardData } from "../../Store/selector/dashboard.selector";
+import { Dashboard } from "../Models/userModels";
 
 @Component({
   selector: "app-dashboard",
@@ -13,16 +14,12 @@ import { selectDashBoardData } from "../../Store/selector/dashboard.selector";
   styleUrl: "./dashboard.component.css",
 })
 export class DashboardComponent {
+  dataDashboard: Dashboard[]=[];
+  pieChartData: any;
+  barcharts: any;
+  pieChat: any;
 
-  constructor(private store: Store) {}
-
-  ngOnInit() {
-    this.store.dispatch(loadDashboardData());
-    this.store.select(selectDashBoardData).subscribe(console.log);
-  }
-
-
-  charts = new Chart({
+  lineChartObj = {
     chart: {
       type: "line",
       height: null,
@@ -33,14 +30,10 @@ export class DashboardComponent {
     credits: {
       enabled: false,
     },
-    series: [
-      {
-        name: "Line 1",
-        data: [1, 2, 9],
-      } as any,
-    ],
-  });
-  barcharts = new Chart({
+    series: [],
+  };
+
+  barChartObj = {
     chart: {
       type: "column",
       height: null,
@@ -52,7 +45,7 @@ export class DashboardComponent {
       text: "Data visualisation for receipt budgeting of the state",
     },
     xAxis: {
-      categories: ["2018-19", "2019-20", "2020-21"],
+      categories: ["2018-19", "2019-20", "2020-21","2021-22"],
       title: {
         text: null,
       },
@@ -92,19 +85,10 @@ export class DashboardComponent {
     credits: {
       enabled: false,
     },
-    series: [
-      {
-        name: "Population",
-        data: [
-          ["Delhi", 24.2],
-          ["Uttar Pradesh", 20.8],
-          ["Madhya Pradesh", 14.9],
-        ],
-      } as any,
-    ],
-  });
+    series: [],
+  };
 
-  pieChat = new Chart({
+  pieChartObj = {
     chart: {
       type: "pie",
       height: null,
@@ -131,15 +115,51 @@ export class DashboardComponent {
         showInLegend: true,
       },
     },
-    series: [
-      {
-        type: "pie",
-        data: [
-          ["Urban", 50],
-          ["Rular", 79],
-          ["Mid Urban", 15],
-        ],
-      },
-    ],
-  });
+    series: [],
+  };
+
+  constructor(
+    private store: Store,
+  ) {}
+
+  lineCharts: any;
+  lineChartData: any;
+  barChartData: any;
+  ngOnInit() {
+    this.store.dispatch(loadDashboardData());
+    this.store.select(selectDashBoardData).subscribe((data) => {
+      this.dataDashboard = data as any;
+
+      this.pieChartData = this.dataDashboard.find(
+        (data: { chartType: string; }) => data.chartType === "pie"
+      );
+      this.barChartData = this.dataDashboard.find(
+        (data: { chartType: string; }) => data.chartType === "bar"
+      );
+      this.lineChartData = this.dataDashboard.find(
+        (data: { chartType: string; }) => data.chartType === "line"
+      );
+      this.lineChartObj = {
+        ...this.lineChartObj,
+        series: this.lineChartData.data,
+      };
+      this.barChartObj = {
+        ...this.barChartObj,
+        series: this.barChartData.data,
+      };
+
+      this.barChartObj = {
+        ...this.barChartObj,
+        series: this.barChartData.data,
+      };
+
+      this.pieChartObj = {
+        ...this.pieChartObj,
+        series: this.pieChartData.data,
+      };
+      this.lineCharts = new Chart(this.lineChartObj);
+      this.barcharts = new Chart(this.barChartObj as any);
+      this.pieChat = new Chart(this.pieChartObj as any);
+    });
+  }
 }

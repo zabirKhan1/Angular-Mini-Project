@@ -7,3 +7,15 @@ export interface UsersTypes {
   dob: string;
   address: string;
 }
+
+export interface Dashboard {
+  chartType: string;
+  title: string;
+  xAxis?: string[];
+  data: ChartData[];
+}
+
+export interface ChartData {
+  name?: string;
+  data: (string | number)[][];
+}

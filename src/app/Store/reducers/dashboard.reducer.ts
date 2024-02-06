@@ -4,9 +4,10 @@ import {
   loadDashboardDataFailure,
   loadDashboardDataSuccess,
 } from "../actions/dashboard.action";
+import { Dashboard } from "../../Components/Models/userModels";
 
 export interface userListState {
-  dashboardData: any[];
+  dashboardData: Dashboard[];
   err: string;
 }
 

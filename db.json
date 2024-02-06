@@ -144,37 +144,33 @@
       "chartType": "pie",
       "title": "Users by Company",
       "data": [
-        { "name": "ABC Corp", "value": 1 },
-        { "name": "XYZ Inc", "value": 1 },
-        { "name": "123 Company", "value": 1 },
-        { "name": "Brown Enterprises", "value": 1 },
-        { "name": "Davis Corporation", "value": 1 },
-        { "name": "Wilson & Sons", "value": 1 },
-        { "name": "Garcia Group", "value": 1 },
-        { "name": "Martinez Ltd.", "value": 1 },
-        { "name": "Clark Enterprises", "value": 1 },
-        { "name": "Lopez & Co.", "value": 2 },
-        { "name": "Smart Joules", "value": 1 },
-        { "name": "Smart Joules Pvt Ltd", "value": 2 }
+        {
+          "type": "pie",
+          "data": [
+            ["Urban", 50],
+            ["Rular", 79],
+            ["Mid Urban", 15],
+            ["Nomads", 22],
+            ["Migrants", 22]
+          ]
+        }
       ]
     },
     {
       "chartType": "bar",
       "title": "Users by Age Group",
       "xAxis": ["18-25", "26-35", "36-45", "46-55", "56+"],
-      "data": [1, 5, 3, 2, 2]
-    },
-    {
-      "chartType": "bar",
-      "title": "Users by Location",
-      "xAxis": [
-        "Anytown, USA",
-        "Anycity, USA",
-        "Anystate, USA",
-        "Noida",
-        "Jhansi"
-      ],
-      "data": [3, 3, 2, 2, 1]
+      "data": [
+        {
+          "name": "Population",
+          "data": [
+            ["Delhi", 24.2],
+            ["Uttar Pradesh", 20.8],
+            ["Madhya Pradesh", 14.9],
+            ["Kolkata", 14.9]
+          ]
+        }
+      ]
     },
     {
       "chartType": "line",
@@ -193,7 +189,17 @@
         "1993",
         "2024"
       ],
-      "data": [1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+      "data": [
+        {
+          "name": "Foreign",
+          "data": [
+            ["London", 1],
+            ["Us", 9],
+            ["Florida", 5],
+            ["Canada", 9]
+          ]
+        }
+      ]
     }
   ]
 }

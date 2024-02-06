@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { UsersTypes } from "../Components/Models/userModels";
+import { Dashboard, UsersTypes } from "../Components/Models/userModels";
 
 @Injectable({
   providedIn: "root",
@@ -37,7 +37,7 @@ export class CommonServices {
     return this.http.delete<UsersTypes[]>(`http://localhost:3000/users/${Id}`);
   }
 
-  getDashboardData(): Observable<any[]> {
+  getDashboardData(): Observable<Dashboard[]> {
     return this.http.get<any[]>("http://localhost:3000/dashboard");
   }
 }
