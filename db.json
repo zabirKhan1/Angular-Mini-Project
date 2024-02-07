@@ -6,8 +6,10 @@
       "lastname": "Doe",
       "email": "john.doe@example.com",
       "company": "ABC Corp",
-      "dob": "1990-05-15",
-      "address": "123 Main Street, Anytown, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "123 Main Street, Anytown, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "firstname": "Alice",
@@ -15,8 +17,10 @@
       "email": "alice.smith@example.com",
       "company": "XYZ Inc",
       "address": "456 Elm Street, Anycity, USA (Florida)",
-      "dob": "1985-12-10",
-      "id": "2"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "id": "2",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "3",
@@ -24,8 +28,10 @@
       "lastname": "Johnson",
       "email": "bob.johnson@example.com",
       "company": "123 Company",
-      "dob": "1982-08-25",
-      "address": "789 Oak Street, Anyvillage, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "789 Oak Street, Anyvillage, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "4",
@@ -33,8 +39,10 @@
       "lastname": "Brown",
       "email": "emily.brown@example.com",
       "company": "Brown Enterprises",
-      "dob": "1978-03-20",
-      "address": "101 Pine Avenue, Anystate, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "101 Pine Avenue, Anystate, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "5",
@@ -42,8 +50,10 @@
       "lastname": "Davis",
       "email": "michael.davis@example.com",
       "company": "Davis Corporation",
-      "dob": "1975-11-05",
-      "address": "202 Maple Drive, Anyplace, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "202 Maple Drive, Anyplace, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "6",
@@ -51,8 +61,10 @@
       "lastname": "Wilson",
       "email": "sarah.wilson@example.com",
       "company": "Wilson & Sons",
-      "dob": "1993-09-12",
-      "address": "303 Cedar Lane, Anycity, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "303 Cedar Lane, Anycity, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "7",
@@ -60,8 +72,10 @@
       "lastname": "Garcia",
       "email": "david.garcia@example.com",
       "company": "Garcia Group",
-      "dob": "1989-07-08",
-      "address": "404 Oakwood Avenue, Anytown, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "404 Oakwood Avenue, Anytown, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "8",
@@ -69,8 +83,10 @@
       "lastname": "Martinez",
       "email": "emma.martinez@example.com",
       "company": "Martinez Ltd.",
-      "dob": "1984-04-18",
-      "address": "505 Elmwood Drive, Anystate, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "505 Elmwood Drive, Anystate, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "9",
@@ -78,8 +94,10 @@
       "lastname": "Clark",
       "email": "christopher.clark@example.com",
       "company": "Clark Enterprises",
-      "dob": "1980-01-30",
-      "address": "606 Pine Street, Anycity, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "606 Pine Street, Anycity, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "10",
@@ -87,8 +105,10 @@
       "lastname": "Lopez",
       "email": "jennifer.lopez@example.com",
       "company": "Lopez & Co.",
-      "dob": "1977-06-25",
-      "address": "707 Cedar Avenue, Anytown, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "707 Cedar Avenue, Anytown, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "11",
@@ -96,8 +116,10 @@
       "lastname": "Lopez",
       "email": "jennifer.lopez@example.com",
       "company": "Lopez & Co.",
-      "dob": "1977-06-25",
-      "address": "707 Cedar Avenue, Anytown, USA"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "address": "707 Cedar Avenue, Anytown, USA",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "21ae",
@@ -107,7 +129,8 @@
       "company": "Smart Joules",
       "address": "R 21 Awas Vikas Colony Jhansi",
       "dob": "2024-02-27T18:30:00.000Z",
-      "type": "[User] Add User"
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "eae8",
@@ -116,8 +139,9 @@
       "email": "Abhilash@smartjoules.com",
       "company": "SmartJoules",
       "address": "Noida",
-      "dob": "2024-02-06T18:30:00.000Z",
-      "type": "[User] Add User"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "id": "69a5",
@@ -126,8 +150,9 @@
       "email": "Abhialash.srivastava@SmartJoules.com",
       "company": "Smart Joules Pvt Ltd",
       "address": "Noida Sector 52 ",
-      "dob": "1974-03-20T18:30:00.000Z",
-      "type": "[User] Add User"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
       "firstname": "Zabir",
@@ -135,8 +160,10 @@
       "email": "zabirk89@gmail.com",
       "company": "Smart Joules Pvt Ltd",
       "address": "R21 Awas Vikas Jhansi Up",
-      "dob": "1999-08-12T18:30:00.000Z",
-      "id": "8e19"
+      "dob": "2024-02-27T18:30:00.000Z",
+      "id": "8e19",
+      "createdAt": "2024-02-07T08:00:00.000Z",
+      "updatedAt": "2024-02-07T08:00:00.000Z"
     }
   ],
   "dashboard": [
@@ -147,18 +174,9 @@
         {
           "type": "pie",
           "data": [
-            [
-              "Urban",
-              50
-            ],
-            [
-              "Rular",
-              79
-            ],
-            [
-              "Mid Urban",
-              15
-            ]
+            ["Urban", 50],
+            ["Rular", 79],
+            ["Mid Urban", 15]
           ]
         }
       ]
@@ -167,33 +185,15 @@
       "chartType": "BudgetForState",
       "title": "Trend of Receipt Budget Allocated",
       "subtitle": "Data visualisation for receipt budgeting of the state",
-      "xAxis": [
-        "18-25",
-        "26-35",
-        "36-45",
-        "46-55",
-        "56+"
-      ],
+      "xAxis": ["18-25", "26-35", "36-45", "46-55", "56+"],
       "data": [
         {
           "name": "Amount",
           "data": [
-            [
-              "Delhi",
-              24.2
-            ],
-            [
-              "Uttar Pradesh",
-              20.8
-            ],
-            [
-              "Madhya Pradesh",
-              14.9
-            ],
-            [
-              "Kolkata",
-              14.9
-            ]
+            ["Delhi", 24.2],
+            ["Uttar Pradesh", 20.8],
+            ["Madhya Pradesh", 14.9],
+            ["Kolkata", 14.9]
           ]
         }
       ]
@@ -205,26 +205,11 @@
         {
           "name": "Percentage Of People",
           "data": [
-            [
-              "London",
-              1
-            ],
-            [
-              "Us",
-              9
-            ],
-            [
-              "Florida",
-              5
-            ],
-            [
-              "Canada",
-              29
-            ],
-            [
-              "Dubai",
-              12
-            ]
+            ["London", 1],
+            ["Us", 9],
+            ["Florida", 5],
+            ["Canada", 29],
+            ["Dubai", 12]
           ]
         }
       ]

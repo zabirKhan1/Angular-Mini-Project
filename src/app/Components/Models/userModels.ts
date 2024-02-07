@@ -6,6 +6,8 @@ export interface UsersTypes {
   company: string;
   dob: string;
   address: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface Dashboard {

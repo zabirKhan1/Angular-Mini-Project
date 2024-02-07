@@ -26,6 +26,8 @@ export class UserDataComponent {
     "address",
     "dob",
     "company",
+    "createdAt",
+    "updatedAt",
     "view",
     "edit",
     "delete",

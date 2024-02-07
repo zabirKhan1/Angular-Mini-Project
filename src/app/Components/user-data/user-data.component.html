@@ -30,6 +30,20 @@
       <td mat-cell *matCellDef="let element">{{ element.company }}</td>
     </ng-container>
 
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.createdAt | dateConvertor }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="updatedAt">
+      <th mat-header-cell *matHeaderCellDef>Updated Data</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.updatedAt | dateConvertor }}
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="view">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
