@@ -135,11 +135,16 @@ export class DashboardComponent {
         (data: { chartType: string }) => data.chartType === "BudgetForState"
       );
       this.lineChartData = this.dataDashboard.find(
-        (data: { chartType: string }) => data.chartType === "line"
+        (data: { chartType: string }) =>
+          data.chartType === "NumberOfPeopleMigrating"
       );
       this.lineChartObj = {
         ...this.lineChartObj,
         series: this.lineChartData.data,
+        title: {
+          ...this.lineChartObj,
+          text: this.lineChartData.title,
+        },
       };
       this.barChartObj = {
         ...this.barChartObj,
