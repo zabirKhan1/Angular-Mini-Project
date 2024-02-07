@@ -14,7 +14,7 @@ import { Dashboard } from "../Models/userModels";
   styleUrl: "./dashboard.component.css",
 })
 export class DashboardComponent {
-  dataDashboard: Dashboard[]=[];
+  dataDashboard: Dashboard[] = [];
   pieChartData: any;
   barcharts: any;
   pieChat: any;
@@ -39,13 +39,13 @@ export class DashboardComponent {
       height: null,
     },
     title: {
-      text: "Trend of Receipt Budget",
+      text: "",
     },
     subtitle: {
-      text: "Data visualisation for receipt budgeting of the state",
+      text: "",
     },
     xAxis: {
-      categories: ["2018-19", "2019-20", "2020-21","2021-22"],
+      categories: ["2018-19", "2019-20", "2020-21", "2021-22"],
       title: {
         text: null,
       },
@@ -94,7 +94,7 @@ export class DashboardComponent {
       height: null,
     },
     title: {
-      text: "Population Data",
+      text: "",
     },
     legend: {
       floating: true,
@@ -118,9 +118,7 @@ export class DashboardComponent {
     series: [],
   };
 
-  constructor(
-    private store: Store,
-  ) {}
+  constructor(private store: Store) {}
 
   lineCharts: any;
   lineChartData: any;
@@ -131,13 +129,13 @@ export class DashboardComponent {
       this.dataDashboard = data as any;
 
       this.pieChartData = this.dataDashboard.find(
-        (data: { chartType: string; }) => data.chartType === "pie"
+        (data: { chartType: string }) => data.chartType === "populationDivision"
       );
       this.barChartData = this.dataDashboard.find(
-        (data: { chartType: string; }) => data.chartType === "bar"
+        (data: { chartType: string }) => data.chartType === "BudgetForState"
       );
       this.lineChartData = this.dataDashboard.find(
-        (data: { chartType: string; }) => data.chartType === "line"
+        (data: { chartType: string }) => data.chartType === "line"
       );
       this.lineChartObj = {
         ...this.lineChartObj,
@@ -151,11 +149,23 @@ export class DashboardComponent {
       this.barChartObj = {
         ...this.barChartObj,
         series: this.barChartData.data,
+        title: {
+          ...this.barChartObj.title,
+          text: this.barChartData.title,
+        },
+        subtitle: {
+          ...this.barChartObj.title,
+          text: this.barChartData.subtitle,
+        },
       };
 
       this.pieChartObj = {
         ...this.pieChartObj,
         series: this.pieChartData.data,
+        title: {
+          ...this.pieChartObj.title,
+          text: this.pieChartData.title,
+        },
       };
       this.lineCharts = new Chart(this.lineChartObj);
       this.barcharts = new Chart(this.barChartObj as any);
