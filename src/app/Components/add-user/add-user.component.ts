@@ -59,9 +59,15 @@ export class AddUserComponent {
           company: user.company,
           address: user.address,
           dob: user.dob,
-          createdAt: this.userId ? user.createdAt : formattedDate,
+          createdAt: user.createdAt,
           updatedAt: formattedDate,
         });
+      });
+    } else {
+      this.userForm.setValue({
+        ...this.userForm.value,
+        createdAt: formattedDate,
+        updatedAt: formattedDate,
       });
     }
   }
@@ -70,7 +76,7 @@ export class AddUserComponent {
     if (this.userForm.valid) {
       if (this.userId) {
         console.log(this.userForm.value);
-        this.store.dispatch(    
+        this.store.dispatch(
           updateUser({ user: this.userForm.value, id: this.userId })
         );
       } else {
@@ -79,7 +85,7 @@ export class AddUserComponent {
     }
     this.route.navigate(["user-data"]);
   }
-  navigateBack(){
-    this.route.navigate(['/user-data'])
+  navigateBack() {
+    this.route.navigate(["/user-data"]);
   }
 }

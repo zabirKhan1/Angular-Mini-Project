@@ -126,10 +126,10 @@
       "lastname": "Khan",
       "email": "Zabir.khan@smartjoules.com",
       "company": "Smart Joules PVT LTD",
-      "address": "R 21 Awas Vikas Colony Jhansi",
+      "address": "R 21 Awas Vikas Colony",
       "dob": "2024-02-27T18:30:00.000Z",
       "createdAt": "2024-02-05T08:00:00.000Z",
-      "updatedAt": "2024-02-07T16:50:28.463Z",
+      "updatedAt": "2024-02-07T17:32:21.968Z",
       "id": "21ae"
     },
     {
@@ -142,6 +142,29 @@
       "createdAt": "2024-02-07T08:00:00.000Z",
       "updatedAt": "2024-02-07T17:21:40.986Z",
       "id": "eae8"
+    },
+    {
+      "firstname": "Zabir ",
+      "lastname": "Khan",
+      "email": "zabirk89@gmail.com",
+      "company": "Smart Joules",
+      "address": "Noida",
+      "dob": "1954-11-22T18:30:00.000Z",
+      "createdAt": "",
+      "updatedAt": "2024-02-07T18:01:57.924Z",
+      "id": "f225"
+    },
+    {
+      "id": "acb2",
+      "firstname": "Abhi",
+      "lastname": "Singh",
+      "email": "abhi@gmail.com",
+      "company": "Smart Joules",
+      "address": "Noida",
+      "dob": "1998-03-11T18:30:00.000Z",
+      "createdAt": "2024-02-07T18:01:23.847Z",
+      "updatedAt": "2024-02-07T18:01:23.847Z",
+      "type": "[User] Add User"
     }
   ],
   "dashboard": [
