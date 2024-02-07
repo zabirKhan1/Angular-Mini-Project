@@ -142,28 +142,6 @@
       "dob": "2024-02-27T18:30:00.000Z",
       "createdAt": "2024-02-07T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
-    },
-    {
-      "id": "69a5",
-      "firstname": "Abhilash",
-      "lastname": "Srivastava",
-      "email": "Abhialash.srivastava@SmartJoules.com",
-      "company": "Smart Joules Pvt Ltd",
-      "address": "Noida Sector 52 ",
-      "dob": "2024-02-27T18:30:00.000Z",
-      "createdAt": "2024-02-07T08:00:00.000Z",
-      "updatedAt": "2024-02-07T08:00:00.000Z"
-    },
-    {
-      "firstname": "Zabir",
-      "lastname": "-Khan",
-      "email": "zabirk89@gmail.com",
-      "company": "Smart Joules Pvt Ltd",
-      "address": "R21 Awas Vikas Jhansi Up",
-      "dob": "2024-02-27T18:30:00.000Z",
-      "id": "8e19",
-      "createdAt": "2024-02-07T08:00:00.000Z",
-      "updatedAt": "2024-02-07T08:00:00.000Z"
     }
   ],
   "dashboard": [
@@ -174,9 +152,18 @@
         {
           "type": "pie",
           "data": [
-            ["Urban", 50],
-            ["Rular", 79],
-            ["Mid Urban", 15]
+            [
+              "Urban",
+              50
+            ],
+            [
+              "Rular",
+              79
+            ],
+            [
+              "Mid Urban",
+              15
+            ]
           ]
         }
       ]
@@ -185,15 +172,33 @@
       "chartType": "BudgetForState",
       "title": "Trend of Receipt Budget Allocated",
       "subtitle": "Data visualisation for receipt budgeting of the state",
-      "xAxis": ["18-25", "26-35", "36-45", "46-55", "56+"],
+      "xAxis": [
+        "18-25",
+        "26-35",
+        "36-45",
+        "46-55",
+        "56+"
+      ],
       "data": [
         {
           "name": "Amount",
           "data": [
-            ["Delhi", 24.2],
-            ["Uttar Pradesh", 20.8],
-            ["Madhya Pradesh", 14.9],
-            ["Kolkata", 14.9]
+            [
+              "Delhi",
+              24.2
+            ],
+            [
+              "Uttar Pradesh",
+              20.8
+            ],
+            [
+              "Madhya Pradesh",
+              14.9
+            ],
+            [
+              "Kolkata",
+              14.9
+            ]
           ]
         }
       ]
@@ -205,11 +210,26 @@
         {
           "name": "Percentage Of People",
           "data": [
-            ["London", 1],
-            ["Us", 9],
-            ["Florida", 5],
-            ["Canada", 29],
-            ["Dubai", 12]
+            [
+              "London",
+              1
+            ],
+            [
+              "Us",
+              9
+            ],
+            [
+              "Florida",
+              5
+            ],
+            [
+              "Canada",
+              29
+            ],
+            [
+              "Dubai",
+              12
+            ]
           ]
         }
       ]

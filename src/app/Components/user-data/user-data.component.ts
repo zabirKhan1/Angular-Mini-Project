@@ -28,9 +28,7 @@ export class UserDataComponent {
     "company",
     "createdAt",
     "updatedAt",
-    "view",
-    "edit",
-    "delete",
+    "actions"
   ];
 
   ngOnInit() {
