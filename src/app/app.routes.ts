@@ -5,7 +5,7 @@ import { UserDetailsComponent } from "./Components/user-details/user-details.com
 
 export const routes: Routes = [
   {
-    path: "",
+    path: "dashboard",
     component: DashboardComponent,
   },
   {
@@ -26,5 +26,9 @@ export const routes: Routes = [
       import("./Components/user-data/user-data.component").then(
         (e) => e.UserDataComponent
       ),
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
   },
 ];
