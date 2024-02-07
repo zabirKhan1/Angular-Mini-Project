@@ -96,6 +96,9 @@ export class DashboardComponent {
     title: {
       text: "",
     },
+    credits: {
+      enabled: false
+    },
     legend: {
       floating: true,
       align: "left",
