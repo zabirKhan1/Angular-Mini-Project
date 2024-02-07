@@ -122,15 +122,15 @@
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
-      "id": "21ae",
       "firstname": "Zabir",
       "lastname": "Khan",
       "email": "Zabir.khan@smartjoules.com",
-      "company": "Smart Joules",
+      "company": "Smart Joules PVT LTD",
       "address": "R 21 Awas Vikas Colony Jhansi",
       "dob": "2024-02-27T18:30:00.000Z",
-      "createdAt": "2024-02-07T08:00:00.000Z",
-      "updatedAt": "2024-02-07T08:00:00.000Z"
+      "createdAt": "2024-02-05T08:00:00.000Z",
+      "updatedAt": "2024-02-07T16:50:28.463Z",
+      "id": "21ae"
     },
     {
       "id": "eae8",

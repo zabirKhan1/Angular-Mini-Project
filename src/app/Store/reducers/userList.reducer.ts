@@ -44,6 +44,8 @@ export const initialStateUser: UsersTypes = {
   email: "",
   address: "",
   id: "",
+  createdAt: "",
+  updatedAt: "",
 };
 
 export const userByIdReducer = createReducer(

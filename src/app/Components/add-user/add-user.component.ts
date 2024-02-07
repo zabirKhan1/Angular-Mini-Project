@@ -40,14 +40,17 @@ export class AddUserComponent {
       company: ["", Validators.required],
       address: ["", Validators.required],
       dob: ["", Validators.required],
+      createdAt: [""],
+      updatedAt: [""],
     });
   }
 
   ngOnInit(): void {
     this.userId = this.activeRoute.snapshot.paramMap.get("id");
+    const today = new Date();
+    const formattedDate = today.toISOString();
     if (this.userId) {
       this.store.dispatch(loadUsersDataById({ code: this.userId }));
-      this.userForm.controls["email"].disable()
       this.store.select(selectUserById).subscribe((user) => {
         this.userForm.setValue({
           firstname: user.firstname,
@@ -56,6 +59,8 @@ export class AddUserComponent {
           company: user.company,
           address: user.address,
           dob: user.dob,
+          createdAt: this.userId ? user.createdAt : formattedDate,
+          updatedAt: formattedDate,
         });
       });
     }
@@ -63,11 +68,14 @@ export class AddUserComponent {
 
   submitForm() {
     if (this.userForm.valid) {
-      if (this.userId)
-        this.store.dispatch(
+      if (this.userId) {
+        console.log(this.userForm.value);
+        this.store.dispatch(    
           updateUser({ user: this.userForm.value, id: this.userId })
         );
-      else this.store.dispatch(addUser(this.userForm.value));
+      } else {
+        this.store.dispatch(addUser(this.userForm.value));
+      }
     }
     this.route.navigate(["user-data"]);
   }
