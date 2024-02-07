@@ -9,7 +9,7 @@
     <mat-card-content class="content">
       <div class="detail-row">
         <span class="label">First Name:</span>
-        <span>{{ user?.firstname  }}</span>
+        <span>{{ user?.firstname }}</span>
       </div>
       <div class="detail-row">
         <span class="label">Last Name:</span>
@@ -21,7 +21,7 @@
       </div>
       <div class="detail-row">
         <span class="label">Date of Birth:</span>
-        <span>{{ user?.dob }}</span>
+        <span>{{ user?.dob || "" | dateConvertor }}</span>
       </div>
       <div class="detail-row">
         <span class="label">Address:</span>

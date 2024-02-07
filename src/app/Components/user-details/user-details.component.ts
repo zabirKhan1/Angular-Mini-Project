@@ -8,11 +8,12 @@ import { loadUsersDataById } from "../../Store/actions/userList.action";
 import { Observable } from "rxjs";
 import { selectUserById } from "../../Store/selector/userList.selector";
 import { UsersTypes } from "../Models/userModels";
+import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
 
 @Component({
   selector: "app-user-details",
   standalone: true,
-  imports: [MaterialModuleModule, AsyncPipe],
+  imports: [MaterialModuleModule, AsyncPipe, DateConvertorPipe],
   templateUrl: "./user-details.component.html",
   styleUrl: "./user-details.component.css",
 })
