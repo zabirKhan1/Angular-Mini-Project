@@ -54,10 +54,10 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="full-width">
-          <mat-label>company</mat-label>
+          <mat-label>Company Name</mat-label>
           <input matInput formControlName="company" required company />
           <mat-error *ngIf="userForm?.get('company')?.hasError('required')"
-            >Company is required</mat-error
+            >Company Name is required</mat-error
           >
         </mat-form-field>
 
