@@ -79,4 +79,7 @@ export class AddUserComponent {
     }
     this.route.navigate(["user-data"]);
   }
+  navigateBack(){
+    this.route.navigate(['/user-data'])
+  }
 }

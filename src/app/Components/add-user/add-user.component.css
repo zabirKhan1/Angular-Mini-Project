@@ -1,63 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  .card {
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; 
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .full-width {
-    width: calc(100% - 24px);
-    margin: 0 12px; 
-  }
-  
-  .center {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .title {
-    font-size: 24px;
-    color: #333333;
-    padding: 20px 0; 
-    text-align: center; 
-    border-bottom: 1px solid #e0e0e0; 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
 
-  input.mat-input {
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  .mat-error {
-    color: #ff0000;
-    font-size: 14px;
-    margin-top: 4px;
-  }
+.card {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative;
+}
 
+.title {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  button.mat-raised-button {
-    background-color:black;
-    color: #ffffff;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.full-width {
+  width: 100%;
+}
 
-  button.mat-raised-button:hover {
-    background-color: #0056b3;
-  }
+.form-fields {
+  padding-bottom: 20px;
+  
+}
+
+mat-form-field {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+mat-label {
+  color: #666666;
+}
+
+.mat-error {
+  color: #d50000;
+}
+
+button.mat-raised-button {
+  width: 100%;
+  background-color: black;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  color: #333333;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.back-button mat-icon {
+  font-size: 24px;
+}
+
+.back-button:hover {
+  background-color: #eeeeee;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card-actions button {
+background-color: black;
+color: white;
+}
