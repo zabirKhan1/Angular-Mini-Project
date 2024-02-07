@@ -19,6 +19,7 @@ export class UserDataComponent {
   constructor(private store: Store, private route: Router) {}
   userList$!: Observable<any>;
   users: any = [];
+  NumberOfUser: number | null = null;
   displayedColumns: string[] = [
     "firstname",
     "email",
@@ -33,6 +34,7 @@ export class UserDataComponent {
   ngOnInit() {
     this.store.dispatch(loadUsersList());
     this.userList$ = this.store.select(selectUserList);
+    this.userList$.subscribe((user) => (this.NumberOfUser = user.length));
   }
 
   AddUser() {

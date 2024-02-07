@@ -1,5 +1,5 @@
 <div class="user-list-container">
-  <h2>All User List</h2>
+  <h2>All User ({{NumberOfUser}})</h2>
   <table mat-table [dataSource]="userList$ | async" class="mat-elevation-z8">
     <ng-container matColumnDef="firstname">
       <th mat-header-cell *matHeaderCellDef>Name</th>
