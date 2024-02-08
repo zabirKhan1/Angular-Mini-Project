@@ -142,29 +142,6 @@
       "createdAt": "2024-02-07T08:00:00.000Z",
       "updatedAt": "2024-02-07T17:21:40.986Z",
       "id": "eae8"
-    },
-    {
-      "firstname": "Zabir ",
-      "lastname": "Khan",
-      "email": "zabirk89@gmail.com",
-      "company": "Smart Joules",
-      "address": "Noida",
-      "dob": "1954-11-22T18:30:00.000Z",
-      "createdAt": "",
-      "updatedAt": "2024-02-07T18:01:57.924Z",
-      "id": "f225"
-    },
-    {
-      "id": "acb2",
-      "firstname": "Abhi",
-      "lastname": "Singh",
-      "email": "abhi@gmail.com",
-      "company": "Smart Joules",
-      "address": "Noida",
-      "dob": "1998-03-11T18:30:00.000Z",
-      "createdAt": "2024-02-07T18:01:23.847Z",
-      "updatedAt": "2024-02-07T18:01:23.847Z",
-      "type": "[User] Add User"
     }
   ],
   "dashboard": [

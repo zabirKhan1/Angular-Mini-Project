@@ -1,0 +1,46 @@
+
+.custom-dialog-container {
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .custom-dialog-title {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .custom-dialog-content {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .custom-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+  }
+  
+  .custom-dialog-actions button {
+    margin-left: 15px;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+  }
+  
+  .custom-dialog-actions button:first-child {
+    margin-left: 0;
+  }
+  
+  .custom-dialog-actions button:hover {
+    opacity: 0.8;
+  }
+  
+  .custom-dialog-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

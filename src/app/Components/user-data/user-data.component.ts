@@ -7,6 +7,8 @@ import { selectUserList } from "../../Store/selector/userList.selector";
 import { Route, Router, RouterLink } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
 import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
+import { DialogBoxComponent } from "../dialog-box/dialog-box.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-user-data",
@@ -16,7 +18,11 @@ import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
   styleUrl: "./user-data.component.css",
 })
 export class UserDataComponent {
-  constructor(private store: Store, private route: Router) {}
+  constructor(
+    private store: Store,
+    private route: Router,
+    private dialog: MatDialog
+  ) {}
   userList$!: Observable<any>;
   users: any = [];
   NumberOfUser: number | null = null;
@@ -28,7 +34,7 @@ export class UserDataComponent {
     "company",
     "createdAt",
     "updatedAt",
-    "actions"
+    "actions",
   ];
 
   ngOnInit() {
@@ -50,8 +56,20 @@ export class UserDataComponent {
   }
 
   deleteUser(Id: any): void {
-    this.store.dispatch(deleteUser(Id.toString()));
-    this.store.dispatch(loadUsersList());
-    this.userList$ = this.store.select(selectUserList);
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: "500px", 
+      data: {
+        title: "Confirmation",
+        message: "Are you sure you want to delete the user?",
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if (result) {
+        this.store.dispatch(deleteUser(Id.toString()));
+        this.store.dispatch(loadUsersList());
+        this.userList$ = this.store.select(selectUserList);
+      }
+    });
   }
 }

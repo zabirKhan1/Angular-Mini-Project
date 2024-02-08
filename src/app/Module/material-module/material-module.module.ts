@@ -33,7 +33,8 @@ import { MatSort } from "@angular/material/sort";
     MatDividerModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatSort
+    MatSort,
+    
   ],
   exports: [
     MatToolbarModule,
