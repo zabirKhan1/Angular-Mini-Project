@@ -1,13 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 
-export enum alertTypes {
-  ShowAlerts = "'Alerts' Show Alerts",
-  Empty = "'Alerts' Empty",
-}
 
-export const showAlerts = createAction(
-  alertTypes.ShowAlerts,
-  props<{ message: string; res: string }>()
-);
-
-export const emptyAction = createAction(alertTypes.Empty);
+export const SHOW_ALERT = '[customer] show alert'
+export const showAlert = createAction(SHOW_ALERT, props<{ message: string, resptype: string }>())
+export const emptyAction = createAction('emptyaction')

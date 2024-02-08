@@ -19,7 +19,8 @@ import {
   updateUserSuccess,
 } from "../actions/userList.action";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { showAlerts } from "../actions/alert.action";
+import { SnackbarService } from "../../snackbar.service";
+import { showAlert } from "../actions/alert.action";
 
 @Injectable()
 export class UserListEffects {
@@ -27,7 +28,8 @@ export class UserListEffects {
     private actions$: Actions,
     private http: HttpClient,
     private CommonServices: CommonServices,
-    private matSnack: MatSnackBar
+    private matSnack: MatSnackBar,
+    private snack: SnackbarService
   ) {}
 
   loadUsers$ = createEffect(() =>
@@ -36,9 +38,15 @@ export class UserListEffects {
       switchMap(() =>
         this.CommonServices.getAllUsers().pipe(
           map((users) => loadUsersListSuccess({ users: users })),
-          catchError((_err) =>
-          of(showAlerts({ message: "Failed to Load User Data", res:_err}))
-        )
+          catchError((_err: string) => {
+            this.snack.snackBarEffect("Failed to Load User Data", _err);
+            return of(
+              showAlert({
+                message: "Failed to Load User Data",
+                resptype: "fail",
+              })
+            );
+          })
         )
       )
     )
@@ -50,9 +58,12 @@ export class UserListEffects {
       switchMap((action) => {
         return this.CommonServices.getUserById(action.code).pipe(
           map((users) => loadUsersDataByIdSuccess({ users: users })),
-          catchError((_err) =>
-          of(showAlerts({ message: "Failed to Load User Data", res:_err}))
-        )
+          catchError((_err) => {
+            this.snack.snackBarEffect("Failed to Load User Data", _err);
+            return of(
+              showAlert({ message: "Failed to Load User Data", resptype: _err })
+            );
+          })
         );
       })
     )
@@ -66,12 +77,15 @@ export class UserListEffects {
           switchMap(() => {
             return of(
               addUserSucces(),
-              showAlerts({ message: "Added successfully", res: "pass" })
+              showAlert({ message: "Added successfully", resptype: "pass" })
             );
           }),
-          catchError((_err) =>
-            of(showAlerts({ message: "Failed to add", res: "fail" }))
-          )
+          catchError((_err) => {
+            this.snack.snackBarEffect("Failed to add", _err);
+            return of(
+              showAlert({ message: "Failed to add", resptype: "fail" })
+            );
+          })
         );
       })
     )
@@ -85,12 +99,15 @@ export class UserListEffects {
           switchMap(() => {
             return of(
               updateUserSuccess(),
-              showAlerts({ message: "Updated successfully", res: "pass" })
+              showAlert({ message: "Updated successfully", resptype: "pass" })
             );
           }),
-          catchError((_err) =>
-            of(showAlerts({ message: "Failed to Update", res: "fail" }))
-          )
+          catchError((_err) => {
+            this.snack.snackBarEffect("Failed to update", _err);
+            return of(
+              showAlert({ message: "Failed to Update", resptype: "fail" })
+            );
+          })
         );
       })
     )
@@ -100,22 +117,25 @@ export class UserListEffects {
     this.actions$.pipe(
       ofType(deleteUser),
       switchMap((action) => {
-        return this.CommonServices
-          .deleteUserById(Object.values(action).slice(0, 4).join("") as any)
-          .pipe(
-            switchMap(() => {
-              return of(
-                deleteUserSucces(),
-                showAlerts({
-                  message: "Deleted User successfully",
-                  res: "pass",
-                })
-              );
-            }),
-            catchError((_err) =>
-              of(showAlerts({ message: "Failed to Delete", res: "fail" }))
-            )
-          );
+        return this.CommonServices.deleteUserById(
+          Object.values(action).slice(0, 4).join("") as any
+        ).pipe(
+          switchMap(() => {
+            return of(
+              deleteUserSucces(),
+              showAlert({
+                message: "Deleted User successfully",
+                resptype: "pass",
+              })
+            );
+          }),
+          catchError((_err) => {
+            this.snack.snackBarEffect("Failed to Delete", _err);
+            return of(
+              showAlert({ message: "Failed to Delete", resptype: "fail" })
+            );
+          })
+        );
       })
     )
   );
