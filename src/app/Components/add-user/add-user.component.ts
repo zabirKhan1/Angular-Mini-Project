@@ -75,7 +75,6 @@ export class AddUserComponent {
   submitForm() {
     if (this.userForm.valid) {
       if (this.userId) {
-        console.log(this.userForm.value);
         this.store.dispatch(
           updateUser({ user: this.userForm.value, id: this.userId })
         );
