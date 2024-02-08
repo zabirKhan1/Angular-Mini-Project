@@ -1,8 +1,8 @@
 <div class="user-list-container">
   <h2>All User ({{ NumberOfUser }})</h2>
-  <table mat-table [dataSource]="userList$ | async" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="firstname">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
       <td mat-cell *matCellDef="let element">
         {{ element?.firstname + " " + element?.lastname }}
       </td>
@@ -19,55 +19,42 @@
     </ng-container>
 
     <ng-container matColumnDef="dob">
-      <th mat-header-cell *matHeaderCellDef>Date Of Birth</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Of Birth</th>
       <td mat-cell *matCellDef="let element">
         {{ element.dob | dateConvertor }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="company">
-      <th mat-header-cell *matHeaderCellDef>Company Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</th>
       <td mat-cell *matCellDef="let element">{{ element.company }}</td>
     </ng-container>
 
     <ng-container matColumnDef="createdAt">
-      <th mat-header-cell *matHeaderCellDef>Created Date</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Created Date</th>
       <td mat-cell *matCellDef="let element">
         {{ element.createdAt | dateConvertor }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="updatedAt">
-      <th mat-header-cell *matHeaderCellDef>Updated Data</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Updated Data</th>
       <td mat-cell *matCellDef="let element">
         {{ element.updatedAt | dateConvertor }}
       </td>
     </ng-container>
 
+
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
-      <td mat-cell *matCellDef="let element" class="action-buttons">
-        <button
-          mat-icon-button
-          (click)="viewUser(element.id)"
-          matTooltip="View User"
-        >
+      <th mat-header-cell *matHeaderCellDef style="width: 150px;">Actions</th>
+      <td mat-cell *matCellDef="let element" class="action-buttons" style="width: 200px;">
+        <button mat-icon-button (click)="viewUser(element.id)" matTooltip="View User">
           <mat-icon>visibility</mat-icon>
         </button>
-
-        <button
-          mat-icon-button
-          (click)="editUser(element.id)"
-          matTooltip="Edit User"
-        >
+        <button mat-icon-button (click)="editUser(element.id)" matTooltip="Edit User">
           <mat-icon>edit</mat-icon>
         </button>
-
-        <button
-          mat-icon-button
-          (click)="deleteUser(element.id)"
-          matTooltip="Delete User"
-        >
+        <button mat-icon-button (click)="deleteUser(element.id)" matTooltip="Delete User">
           <mat-icon>delete</mat-icon>
         </button>
       </td>

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { AsyncPipe } from "@angular/common";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
@@ -10,11 +10,19 @@ import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
 import { DialogBoxComponent } from "../dialog-box/dialog-box.component";
 import { MatDialog } from "@angular/material/dialog";
 import { UserDetailsComponent } from "../user-details/user-details.component";
+import { MatSort, MatSortModule, MatSortable } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: "app-user-data",
   standalone: true,
-  imports: [MaterialModuleModule, AsyncPipe, RouterLink, DateConvertorPipe],
+  imports: [
+    MaterialModuleModule,
+    AsyncPipe,
+    RouterLink,
+    DateConvertorPipe,
+    MatSortModule,
+  ],
   templateUrl: "./user-data.component.html",
   styleUrl: "./user-data.component.css",
 })
@@ -26,6 +34,8 @@ export class UserDataComponent {
   ) {}
   userList$!: Observable<any>;
   users: any = [];
+  dataSource = new MatTableDataSource<any>([]);
+  @ViewChild(MatSort) sort!: MatSort;
   NumberOfUser: number | null = null;
   displayedColumns: string[] = [
     "firstname",
@@ -44,6 +54,15 @@ export class UserDataComponent {
     this.userList$.subscribe((user) => {
       this.NumberOfUser = user.length;
       this.users = user;
+      this.dataSource.data = user;
+      this.dataSource.sort = this.sort;
+      this.dataSource.sortingDataAccessor = (data, sortHeaderId) => {
+        switch (sortHeaderId) {
+          case 'createdAt': return new Date(data.createdAt); 
+          default: return data[sortHeaderId] || '';
+        }
+      };
+      this.dataSource.sort.sort(({ id: 'createdAt', start: 'desc' }) as MatSortable);
     });
   }
 

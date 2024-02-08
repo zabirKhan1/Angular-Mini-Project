@@ -4,7 +4,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   position: relative;
-  overflow-x: auto; /* Enable horizontal scrolling on small screens */
+  overflow-x: auto; 
 }
 
 .table-header {
@@ -16,7 +16,7 @@
 .mat-table {
   width: 100%;
   border-collapse: collapse;
-  overflow: hidden; /* Hide the horizontal overflow content */
+  overflow: hidden;
 }
 
 .mat-table th,
@@ -24,9 +24,9 @@
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  display: block; /* Display block to allow stacking on small screens */
-  width: 100%; /* Ensure cells take full width on small screens */
-  box-sizing: border-box; /* Include padding and border in cell width */
+  display: block;
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 .mat-table th {
@@ -50,7 +50,7 @@
   background-color: #333;
 }
 
-/* Media queries for responsiveness */
+
 @media screen and (max-width: 767px) {
   .mat-table th,
   .mat-table td {
