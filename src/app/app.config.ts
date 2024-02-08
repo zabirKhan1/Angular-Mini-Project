@@ -13,6 +13,7 @@ import { UserListEffects } from "./Store/effects/userList.effects";
 import { provideEffects } from "@ngrx/effects";
 import { dashboardDataReducer } from "./Store/reducers/dashboard.reducer";
 import { DashboardDataEffect } from "./Store/effects/dashboard.effect";
+import { alertEffect } from "./Store/effects/alert.effect";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,6 +25,6 @@ export const appConfig: ApplicationConfig = {
     provideState({ name: "dashData", reducer: dashboardDataReducer }),
     provideState({ name: "UserList", reducer: userListReducer }),
     provideState({ name: "UserById", reducer: userByIdReducer }),
-    provideEffects([UserListEffects, DashboardDataEffect]),
+    provideEffects([UserListEffects, DashboardDataEffect, alertEffect]),
   ],
 };

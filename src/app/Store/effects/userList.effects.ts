@@ -19,7 +19,6 @@ import {
   updateUserSuccess,
 } from "../actions/userList.action";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { SnackbarService } from "../../snackbar.service";
 import { showAlert } from "../actions/alert.action";
 
 @Injectable()
@@ -29,7 +28,6 @@ export class UserListEffects {
     private http: HttpClient,
     private CommonServices: CommonServices,
     private matSnack: MatSnackBar,
-    private snack: SnackbarService
   ) {}
 
   loadUsers$ = createEffect(() =>
@@ -39,7 +37,6 @@ export class UserListEffects {
         this.CommonServices.getAllUsers().pipe(
           map((users) => loadUsersListSuccess({ users: users })),
           catchError((_err: string) => {
-            this.snack.snackBarEffect("Failed to Load User Data", _err);
             return of(
               showAlert({
                 message: "Failed to Load User Data",
@@ -59,9 +56,8 @@ export class UserListEffects {
         return this.CommonServices.getUserById(action.code).pipe(
           map((users) => loadUsersDataByIdSuccess({ users: users })),
           catchError((_err) => {
-            this.snack.snackBarEffect("Failed to Load User Data", _err);
             return of(
-              showAlert({ message: "Failed to Load User Data", resptype: _err })
+              showAlert({ message: "Failed to Load User Data", resptype: 'fail' })
             );
           })
         );
@@ -81,7 +77,6 @@ export class UserListEffects {
             );
           }),
           catchError((_err) => {
-            this.snack.snackBarEffect("Failed to add", _err);
             return of(
               showAlert({ message: "Failed to add", resptype: "fail" })
             );
@@ -103,7 +98,6 @@ export class UserListEffects {
             );
           }),
           catchError((_err) => {
-            this.snack.snackBarEffect("Failed to update", _err);
             return of(
               showAlert({ message: "Failed to Update", resptype: "fail" })
             );
@@ -130,7 +124,6 @@ export class UserListEffects {
             );
           }),
           catchError((_err) => {
-            this.snack.snackBarEffect("Failed to Delete", _err);
             return of(
               showAlert({ message: "Failed to Delete", resptype: "fail" })
             );
