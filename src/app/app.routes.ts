@@ -17,10 +17,6 @@ export const routes: Routes = [
     component: AddUserComponent,
   },
   {
-    path: "view-user-details/:id",
-    component: UserDetailsComponent,
-  },
-  {
     path: "user-data",
     loadComponent: () =>
       import("./Components/user-data/user-data.component").then(

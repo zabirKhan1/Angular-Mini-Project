@@ -1,40 +1,31 @@
-<div class="container">
-  <mat-card class="card">
-    <mat-card-header class="header">
-      <mat-card-title>User Details</mat-card-title>
-    </mat-card-header>
-
-    <mat-divider></mat-divider>
-
-    <mat-card-content class="content">
-      <div class="detail-row">
-        <span class="label">First Name:</span>
-        <span>{{ user?.firstname }}</span>
-      </div>
-      <div class="detail-row">
-        <span class="label">Last Name:</span>
-        <span>{{ user?.lastname }}</span>
-      </div>
-      <div class="detail-row">
-        <span class="label">Email:</span>
-        <span>{{ user?.email }}</span>
-      </div>
-      <div class="detail-row">
-        <span class="label">Date of Birth:</span>
-        <span>{{ user?.dob || "" | dateConvertor }}</span>
-      </div>
-      <div class="detail-row">
-        <span class="label">Address:</span>
-        <span>{{ user?.address }}</span>
-      </div>
-      <div class="detail-row">
-        <span class="label">Company Name</span>
-        <span>{{ user?.company }}</span>
-      </div>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-button color="primary" (click)="goBack()">Go Back</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<mat-card class="card">
+  <button mat-icon-button class="close-button" (click)="closeDialog()">
+    <mat-icon aria-label="Close dialog">close</mat-icon>
+  </button>
+  <mat-card-content class="content">
+    <div class="detail-row">
+      <span class="label">First Name:</span>
+      <span>{{ user?.firstname }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Last Name:</span>
+      <span>{{ user?.lastname }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Email:</span>
+      <span>{{ user?.email }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Date of Birth:</span>
+      <span>{{ user?.dob || "" | dateConvertor }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Address:</span>
+      <span>{{ user?.address }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Company Name:</span>
+      <span>{{ user?.company }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -9,6 +9,7 @@ import { MaterialModuleModule } from "../../Module/material-module/material-modu
 import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
 import { DialogBoxComponent } from "../dialog-box/dialog-box.component";
 import { MatDialog } from "@angular/material/dialog";
+import { UserDetailsComponent } from "../user-details/user-details.component";
 
 @Component({
   selector: "app-user-data",
@@ -40,7 +41,10 @@ export class UserDataComponent {
   ngOnInit() {
     this.store.dispatch(loadUsersList());
     this.userList$ = this.store.select(selectUserList);
-    this.userList$.subscribe((user) => (this.NumberOfUser = user.length));
+    this.userList$.subscribe((user) => {
+      this.NumberOfUser = user.length;
+      this.users = user;
+    });
   }
 
   AddUser() {
@@ -48,7 +52,10 @@ export class UserDataComponent {
   }
 
   viewUser(id: string): void {
-    this.route.navigate([`view-user-details/${id}`]);
+    const dialogRef = this.dialog.open(UserDetailsComponent, {
+      width: "450px",
+      data: id,
+    });
   }
 
   editUser(id: string): void {
@@ -57,7 +64,7 @@ export class UserDataComponent {
 
   deleteUser(Id: any): void {
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      width: "500px", 
+      width: "500px",
       data: {
         title: "Confirmation",
         message: "Are you sure you want to delete the user?",

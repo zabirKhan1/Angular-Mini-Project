@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
 import { CommonServices } from "../../services/services.module";
@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 import { selectUserById } from "../../Store/selector/userList.selector";
 import { UsersTypes } from "../Models/userModels";
 import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: "app-user-details",
@@ -26,11 +27,15 @@ export class UserDetailsComponent {
     private store: Store,
     private route: ActivatedRoute,
     private router: Router,
-    private CommonServices: CommonServices
-  ) {}
+    private CommonServices: CommonServices,
+    public dialogRef: MatDialogRef<UserDetailsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.userId=data
+  }
 
   ngOnInit(): void {
-    this.userId = this.route.snapshot.paramMap.get("id");
+    // this.userId = this.route.snapshot.paramMap.get("id");
     this.store.dispatch(loadUsersDataById({ code: this.userId }));
     this.userById$ = this.store.select(selectUserById);
     this.userById$.subscribe((user) => (this.user = user));
@@ -38,5 +43,9 @@ export class UserDetailsComponent {
 
   goBack(): void {
     this.router.navigate(["/user-data"]);
+  }
+
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }
