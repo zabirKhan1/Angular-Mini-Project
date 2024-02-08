@@ -36,7 +36,9 @@ export class UserListEffects {
       switchMap(() =>
         this.CommonServices.getAllUsers().pipe(
           map((users) => loadUsersListSuccess({ users: users })),
-          catchError((error) => of(loadUsersListFailure({ error })))
+          catchError((_err) =>
+          of(showAlerts({ message: "Failed to Load User Data", res:_err}))
+        )
         )
       )
     )
@@ -48,7 +50,9 @@ export class UserListEffects {
       switchMap((action) => {
         return this.CommonServices.getUserById(action.code).pipe(
           map((users) => loadUsersDataByIdSuccess({ users: users })),
-          catchError((error) => of(loadUsersDataByIdFailure({ error })))
+          catchError((_err) =>
+          of(showAlerts({ message: "Failed to Load User Data", res:_err}))
+        )
         );
       })
     )
