@@ -6,9 +6,9 @@
       "lastname": "Doe",
       "email": "john.doe@example.com",
       "company": "ABC Corp",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "1999-01-27T18:30:00.000Z",
       "address": "123 Main Street, Anytown, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -17,9 +17,9 @@
       "email": "alice.smith@example.com",
       "company": "XYZ Inc",
       "address": "456 Elm Street, Anycity, USA (Florida)",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-12-27T18:30:00.000Z",
       "id": "2",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -28,9 +28,9 @@
       "lastname": "Johnson",
       "email": "bob.johnson@example.com",
       "company": "123 Company",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-03-27T18:30:00.000Z",
       "address": "789 Oak Street, Anyvillage, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -39,9 +39,9 @@
       "lastname": "Brown",
       "email": "emily.brown@example.com",
       "company": "Brown Enterprises",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-04-27T18:30:00.000Z",
       "address": "101 Pine Avenue, Anystate, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -50,9 +50,9 @@
       "lastname": "Davis",
       "email": "michael.davis@example.com",
       "company": "Davis Corporation",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-05-27T18:30:00.000Z",
       "address": "202 Maple Drive, Anyplace, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -61,9 +61,9 @@
       "lastname": "Wilson",
       "email": "sarah.wilson@example.com",
       "company": "Wilson & Sons",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-06-27T18:30:00.000Z",
       "address": "303 Cedar Lane, Anycity, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-05T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -72,9 +72,9 @@
       "lastname": "Garcia",
       "email": "david.garcia@example.com",
       "company": "Garcia Group",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-05-27T18:30:00.000Z",
       "address": "404 Oakwood Avenue, Anytown, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-08T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -83,9 +83,9 @@
       "lastname": "Martinez",
       "email": "emma.martinez@example.com",
       "company": "Martinez Ltd.",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-06-27T18:30:00.000Z",
       "address": "505 Elmwood Drive, Anystate, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-08T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -94,10 +94,10 @@
       "lastname": "Clark",
       "email": "christopher.clark@example.com",
       "company": "Clark Enterprises",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2024-08-27T18:30:00.000Z",
       "address": "606 Pine Street, Anycity, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
-      "updatedAt": "2024-02-07T08:00:00.000Z"
+      "createdAt": "2024-02-08T08:00:00.000Z",
+      "updatedAt": "1992-02-07T08:00:00.000Z"
     },
     {
       "id": "10",
@@ -105,9 +105,9 @@
       "lastname": "Lopez",
       "email": "jennifer.lopez@example.com",
       "company": "Lopez & Co.",
-      "dob": "2024-02-27T18:30:00.000Z",
+      "dob": "2015-12-27T18:30:00.000Z",
       "address": "707 Cedar Avenue, Anytown, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-08T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -118,7 +118,7 @@
       "company": "Lopez & Co.",
       "dob": "2024-02-27T18:30:00.000Z",
       "address": "707 Cedar Avenue, Anytown, USA",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "createdAt": "2024-02-02T08:00:00.000Z",
       "updatedAt": "2024-02-07T08:00:00.000Z"
     },
     {
@@ -127,8 +127,8 @@
       "email": "Zabir.khan@smartjoules.com",
       "company": "Smart Joules PVT LTD",
       "address": "R 21 Awas Vikas Colony",
-      "dob": "2024-02-27T18:30:00.000Z",
-      "createdAt": "2024-02-05T08:00:00.000Z",
+      "dob": "2024-01-27T18:30:00.000Z",
+      "createdAt": "2024-02-02T08:00:00.000Z",
       "updatedAt": "2024-02-07T17:32:21.968Z",
       "id": "21ae"
     },
@@ -138,101 +138,11 @@
       "email": "Abhilash@smartjoules.com",
       "company": "SmartJoules Pvt Ltd",
       "address": "Noida",
-      "dob": "2024-02-27T18:30:00.000Z",
-      "createdAt": "2024-02-07T08:00:00.000Z",
+      "dob": "2024-06-27T18:30:00.000Z",
+      "createdAt": "2024-02-02T08:00:00.000Z",
       "updatedAt": "2024-02-07T17:21:40.986Z",
       "id": "eae8"
     }
   ],
-  "dashboard": [
-    {
-      "chartType": "populationDivision",
-      "title": "Population Splited Based On Area",
-      "data": [
-        {
-          "type": "pie",
-          "data": [
-            [
-              "Urban",
-              50
-            ],
-            [
-              "Rular",
-              79
-            ],
-            [
-              "Mid Urban",
-              15
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "chartType": "BudgetForState",
-      "title": "Trend of Receipt Budget Allocated",
-      "subtitle": "Data visualisation for receipt budgeting of the state",
-      "xAxis": [
-        "18-25",
-        "26-35",
-        "36-45",
-        "46-55",
-        "56+"
-      ],
-      "data": [
-        {
-          "name": "Amount",
-          "data": [
-            [
-              "Delhi",
-              24.2
-            ],
-            [
-              "Uttar Pradesh",
-              20.8
-            ],
-            [
-              "Madhya Pradesh",
-              14.9
-            ],
-            [
-              "Kolkata",
-              14.9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "chartType": "NumberOfPeopleMigrating",
-      "title": "Number Of People Migrating",
-      "data": [
-        {
-          "name": "Percentage Of People",
-          "data": [
-            [
-              "London",
-              1
-            ],
-            [
-              "Us",
-              9
-            ],
-            [
-              "Florida",
-              5
-            ],
-            [
-              "Canada",
-              29
-            ],
-            [
-              "Dubai",
-              12
-            ]
-          ]
-        }
-      ]
-    }
-  ]
+  "dashboard": []
 }
