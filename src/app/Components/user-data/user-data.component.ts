@@ -8,7 +8,7 @@ import { Route, Router, RouterLink } from "@angular/router";
 import { MaterialModuleModule } from "../../Module/material-module/material-module.module";
 import { DateConvertorPipe } from "../../CustomPipe/date-convertor.pipe";
 import { DialogBoxComponent } from "../dialog-box/dialog-box.component";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { UserDetailsComponent } from "../user-details/user-details.component";
 import { MatSort, MatSortModule, MatSortable } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
@@ -71,12 +71,12 @@ export class UserDataComponent {
   }
 
   viewUser(id: string): void {
-    const dialogRef = this.dialog.open(UserDetailsComponent, {
-      width: "450px",
-      data: id,
-    });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = "450px";
+    dialogConfig.data = id;
+    dialogConfig.disableClose = true; 
+    const dialogRef = this.dialog.open(UserDetailsComponent, dialogConfig);
   }
-
   editUser(id: string): void {
     this.route.navigate([`edit-user/${id}`]);
   }

@@ -11,6 +11,15 @@
   z-index: 1;
 }
 
+.close-button:hover {
+  background-color: #e0e0e0; 
+}
+
+.mat-icon {
+  color:none;
+  background-color: none !important;
+}
+
 .content {
   padding: 20px;
 }

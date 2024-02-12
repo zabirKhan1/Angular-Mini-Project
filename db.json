@@ -154,6 +154,18 @@
       "createdAt": "2024-02-08T11:31:28.537Z",
       "updatedAt": "2024-02-08T11:31:28.537Z",
       "type": "[User] Add User"
+    },
+    {
+      "id": "a635",
+      "firstname": "Joe",
+      "lastname": "Semule",
+      "email": "joe2@gmail.com",
+      "company": "Smart joules ",
+      "address": "Okhla Phase 2",
+      "dob": "1944-06-13T17:30:00.000Z",
+      "createdAt": "2024-02-12T05:29:10.247Z",
+      "updatedAt": "2024-02-12T05:29:10.247Z",
+      "type": "[User] Add User"
     }
   ],
   "dashboard": []
