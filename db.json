@@ -133,17 +133,6 @@
       "id": "21ae"
     },
     {
-      "firstname": "Abhilash",
-      "lastname": "Srivastava",
-      "email": "Abhilash@smartjoules.com",
-      "company": "SmartJoules Pvt",
-      "address": "Noida",
-      "dob": "2024-06-27T18:30:00.000Z",
-      "createdAt": "2024-02-02T08:00:00.000Z",
-      "updatedAt": "2024-02-08T07:42:02.188Z",
-      "id": "eae8"
-    },
-    {
       "id": "3e98",
       "firstname": "Arjun",
       "lastname": "Gupta",
@@ -165,6 +154,42 @@
       "dob": "1944-06-13T17:30:00.000Z",
       "createdAt": "2024-02-12T05:29:10.247Z",
       "updatedAt": "2024-02-12T05:29:10.247Z",
+      "type": "[User] Add User"
+    },
+    {
+      "id": "6195",
+      "firstname": "Zabir",
+      "lastname": "Khan",
+      "email": "Zabirk89@gmail.com",
+      "company": "SmartJoules",
+      "address": "Okhla",
+      "dob": "1999-08-12T18:30:00.000Z",
+      "createdAt": "2024-02-16T04:27:54.578Z",
+      "updatedAt": "2024-02-16T04:27:54.578Z",
+      "type": "[User] Add User"
+    },
+    {
+      "id": "e1d6",
+      "firstname": "Zabir",
+      "lastname": "Khan",
+      "email": "zabirk89@gmail.com",
+      "company": "Smart joules",
+      "address": "Noida",
+      "dob": "1994-07-14T18:30:00.000Z",
+      "createdAt": "2024-03-01T05:12:27.847Z",
+      "updatedAt": "2024-03-01T05:12:27.847Z",
+      "type": "[User] Add User"
+    },
+    {
+      "id": "76bb",
+      "firstname": "Aatif",
+      "lastname": "Khan",
+      "email": "aatif@smartjoules.in",
+      "company": "Smart Joules",
+      "address": "Palam Delhi",
+      "dob": "1994-08-11T18:30:00.000Z",
+      "createdAt": "2024-04-15T06:40:39.931Z",
+      "updatedAt": "2024-04-15T06:40:39.931Z",
       "type": "[User] Add User"
     }
   ],

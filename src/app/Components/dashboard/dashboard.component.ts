@@ -5,6 +5,11 @@ import { loadUsersList } from "../../Store/actions/userList.action";
 import { selectUserList } from "../../Store/selector/userList.selector";
 import { Observable } from "rxjs";
 import { DashboardService } from "../../services/dashboard.service";
+import * as Highcharts from 'highcharts';
+import HighchartsSankey from 'highcharts/modules/sankey';
+HighchartsSankey(Highcharts);
+import { Options } from 'highcharts';
+
 
 @Component({
   selector: "app-dashboard",
@@ -22,6 +27,7 @@ export class DashboardComponent {
   users: any = [];
   NumberOfUser: number | null = null;
 
+
   constructor(
     private store: Store,
     private dashboardServices: DashboardService
@@ -29,7 +35,14 @@ export class DashboardComponent {
 
   lineCharts: any;
   lineChartData: any;
+  sankeyChartOptions: any;
+
+
+
   ngOnInit() {
+
+
+
     this.store.dispatch(loadUsersList());
     this.userList$ = this.store.select(selectUserList);
     this.userList$.subscribe((user) => {
@@ -75,6 +88,33 @@ export class DashboardComponent {
           },
         ],
       };
+
+
+
+    // Initialize Sankey chart
+    this.sankeyChartOptions = new Chart({
+      chart: {
+        type: 'sankey'
+      },
+      title: {
+        text: 'Sankey Diagram'
+      },
+      series: [{
+        type: 'sankey',
+        keys: ['from', 'to', 'weight'],
+        data: [
+          ['A', 'C', 10],
+          ['B', 'D', 15],
+          ['B', 'E', 5],
+          ['C', 'D', 5],
+          ['C', 'E', 5],
+          ['A', 'B', 50],
+        ]
+      }]
+    });
+
+
+
       this.lineCharts = new Chart(this.dashboardServices.lineChartObj as any);
       this.barcharts = new Chart(this.dashboardServices.barChartObj as any);
       this.pieChat = new Chart(this.dashboardServices.pieChartObj as any);
