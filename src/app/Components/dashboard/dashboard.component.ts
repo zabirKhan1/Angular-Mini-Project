@@ -5,11 +5,10 @@ import { loadUsersList } from "../../Store/actions/userList.action";
 import { selectUserList } from "../../Store/selector/userList.selector";
 import { Observable } from "rxjs";
 import { DashboardService } from "../../services/dashboard.service";
-import * as Highcharts from 'highcharts';
-import HighchartsSankey from 'highcharts/modules/sankey';
+import * as Highcharts from "highcharts";
+import HighchartsSankey from "highcharts/modules/sankey";
 HighchartsSankey(Highcharts);
-import { Options } from 'highcharts';
-
+import { Options } from "highcharts";
 
 @Component({
   selector: "app-dashboard",
@@ -27,7 +26,6 @@ export class DashboardComponent {
   users: any = [];
   NumberOfUser: number | null = null;
 
-
   constructor(
     private store: Store,
     private dashboardServices: DashboardService
@@ -37,12 +35,40 @@ export class DashboardComponent {
   lineChartData: any;
   sankeyChartOptions: any;
 
+  nodes = [
+    {
+        "id": "16293",
+        "name": "EM3 NF-29"
+    },
+    {
+        "id": "16871",
+        "name": "dms1 NF-29"
+    },
+    {
+        "id": "16875",
+        "column": 2,
+        "name": "n1meter NF-29 Xpert"
+    }
+]
 
-
+  data =[
+    [
+        "16871",
+        "17593",
+        25
+    ],
+    [
+        "16871",
+        "17322",
+        25
+    ],
+    [
+        "16293",
+        "16875",
+        50
+    ]
+]
   ngOnInit() {
-
-
-
     this.store.dispatch(loadUsersList());
     this.userList$ = this.store.select(selectUserList);
     this.userList$.subscribe((user) => {
@@ -89,31 +115,23 @@ export class DashboardComponent {
         ],
       };
 
-
-
-    // Initialize Sankey chart
-    this.sankeyChartOptions = new Chart({
-      chart: {
-        type: 'sankey'
-      },
-      title: {
-        text: 'Sankey Diagram'
-      },
-      series: [{
-        type: 'sankey',
-        keys: ['from', 'to', 'weight'],
-        data: [
-          ['A', 'C', 10],
-          ['B', 'D', 15],
-          ['B', 'E', 5],
-          ['C', 'D', 5],
-          ['C', 'E', 5],
-          ['A', 'B', 50],
-        ]
-      }]
-    });
-
-
+      // Initialize Sankey chart
+      this.sankeyChartOptions = new Chart({
+        chart: {
+          type: "sankey",
+        },
+        title: {
+          text: "Sankey Diagram",
+        },
+        series: [
+          {
+            type: "sankey",
+            keys: ["from", "to", "weight"],
+            nodes: this.nodes,
+            data: this.data,
+          },
+        ],
+      });
 
       this.lineCharts = new Chart(this.dashboardServices.lineChartObj as any);
       this.barcharts = new Chart(this.dashboardServices.barChartObj as any);
